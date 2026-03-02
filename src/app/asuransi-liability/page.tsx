@@ -133,49 +133,48 @@ export default function LiabilityPage() {
             </Link>
 
             {/* Product Liability */}
-            <div className="bg-amber-50 p-6 rounded-xl border border-amber-100">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Package className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-amber-800 text-lg">Asuransi Product Liability</h3>
-                  <p className="mt-2 text-slate-700 text-sm">
-                    Menjamin risiko tuntutan akibat produk yang menyebabkan cedera atau kerugian 
-                    kepada konsumen. Sangat penting bagi produsen, distributor, dan penjual produk 
-                    konsumen.
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">Produsen</span>
-                    <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">Distributor</span>
-                    <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">Retailer</span>
+            <Link href="/asuransi-product-liability" className="block">
+              <div className="bg-amber-50 p-6 rounded-xl border border-amber-100 hover:border-amber-300 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Package className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-amber-800 text-lg">Asuransi Product Liability</h3>
+                    <p className="mt-2 text-slate-700 text-sm">
+                      Menjamin risiko tuntutan akibat produk yang menyebabkan cedera atau kerugian 
+                      kepada konsumen. Sangat penting bagi produsen, distributor, dan penjual produk 
+                      konsumen.
+                    </p>
+                    <span className="mt-2 inline-flex items-center text-amber-600 text-sm font-medium">
+                      Pelajari lebih lanjut →
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Professional Indemnity */}
-            <div className="bg-purple-50 p-6 rounded-xl border border-purple-100">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Briefcase className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-purple-800 text-lg">Asuransi Professional Indemnity</h3>
-                  <p className="mt-2 text-slate-700 text-sm">
-                    Melindungi profesional dari tuntutan akibat kesalahan atau kelalaian dalam 
-                    memberikan jasa. Diperlukan oleh konsultan, akuntan, arsitek, pengacara, dan 
-                    tenaga profesional lainnya.
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Konsultan</span>
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Akuntan</span>
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Arsitek</span>
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Pengacara</span>
+            <Link href="/asuransi-professional-indemnity" className="block">
+              <div className="bg-purple-50 p-6 rounded-xl border border-purple-100 hover:border-purple-300 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-purple-800 text-lg">Asuransi Professional Indemnity</h3>
+                    <p className="mt-2 text-slate-700 text-sm">
+                      Melindungi profesional dari tuntutan akibat kesalahan atau kelalaian dalam 
+                      memberikan jasa. Diperlukan oleh konsultan, akuntan, arsitek, pengacara, dan 
+                      tenaga profesional lainnya.
+                    </p>
+                    <span className="mt-2 inline-flex items-center text-purple-600 text-sm font-medium">
+                      Pelajari lebih lanjut →
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Mengapa Penting */}

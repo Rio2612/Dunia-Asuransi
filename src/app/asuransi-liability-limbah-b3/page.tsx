@@ -41,11 +41,11 @@ export default function LimbahB3Page() {
               </div>
             </Link>
             <Link 
-              href="/" 
+              href="/asuransi-liability" 
               className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Kembali ke Beranda
+              Kembali ke Asuransi Liability
             </Link>
           </div>
         </div>
@@ -307,25 +307,52 @@ export default function LimbahB3Page() {
             </a>
           </div>
 
-          {/* Internal Linking */}
-          <div className="mt-12 border-t pt-8">
+          {/* Link ke Pilar */}
+          <div className="mt-10 bg-indigo-50 p-5 rounded-xl border border-indigo-100">
+            <h4 className="font-semibold text-indigo-800 mb-2">📌 Asuransi Liability</h4>
+            <p className="text-sm text-slate-600 mb-3">
+              Halaman ini adalah bagian dari Asuransi Liability. Pelajari jenis-jenis asuransi liability lainnya:
+            </p>
+            <Link href="/asuransi-liability" className="text-indigo-600 font-medium hover:underline">
+              ← Kembali ke halaman utama Asuransi Liability
+            </Link>
+          </div>
+
+          {/* Link Silang ke Cluster */}
+          <div className="mt-6 border-t pt-6">
             <h3 className="text-lg font-semibold text-blue-800">
-              Layanan Asuransi Lainnya
+              Jenis Asuransi Liability Lainnya
             </h3>
 
             <ul className="mt-4 space-y-2 text-blue-700">
-              <li>
-                <Link href="/asuransi-liability" className="hover:underline flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Liability (Overview)
-                </Link>
-              </li>
               <li>
                 <Link href="/asuransi-public-liability" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
                   Asuransi Public Liability
                 </Link>
               </li>
+              <li>
+                <Link href="/asuransi-product-liability" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                  Asuransi Product Liability
+                </Link>
+              </li>
+              <li>
+                <Link href="/asuransi-professional-indemnity" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                  Asuransi Professional Indemnity
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Internal Linking */}
+          <div className="mt-8 border-t pt-8">
+            <h3 className="text-lg font-semibold text-blue-800">
+              Layanan Asuransi Lainnya
+            </h3>
+
+            <ul className="mt-4 space-y-2 text-blue-700">
               <li>
                 <Link href="/asuransi-car-indonesia" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>

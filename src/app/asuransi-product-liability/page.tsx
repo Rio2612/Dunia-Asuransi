@@ -1,30 +1,29 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Shield, ArrowLeft, Scale, Phone, MessageCircle, Users, CheckCircle, Building2, AlertTriangle } from 'lucide-react'
+import { Shield, ArrowLeft, Package, Phone, MessageCircle, AlertTriangle, CheckCircle, Building2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Asuransi Public Liability | Perlindungan Tanggung Jawab Hukum Perusahaan | Dunia Asuransi',
-  description: 'Asuransi Public Liability memberikan perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis.',
+  title: 'Asuransi Product Liability | Perlindungan Tanggung Jawab Produk | Dunia Asuransi',
+  description: 'Asuransi Product Liability memberikan perlindungan terhadap tuntutan hukum akibat produk yang menyebabkan cedera atau kerugian kepada konsumen. Konsultasi profesional bersama Dunia Asuransi.',
   keywords: [
-    'asuransi public liability',
-    'asuransi tanggung jawab hukum',
-    'asuransi pihak ketiga',
-    'asuransi liability perusahaan',
-    'asuransiTPL',
-    'asuransi tanggung jawab publik',
-    'asuransi liability',
-    'perlindungan hukum bisnis',
+    'asuransi product liability',
+    'asuransi tanggung jawab produk',
+    'asuransi produk',
+    'asuransi produsen',
+    'asuransi distributor',
+    'product liability indonesia',
+    'asuransi konsumen',
   ],
   authors: [{ name: 'Rio Mardiansyah' }],
   openGraph: {
-    title: 'Asuransi Public Liability | Perlindungan Tanggung Jawab Hukum Perusahaan',
-    description: 'Lindungi bisnis Anda dari risiko tuntutan hukum pihak ketiga dengan Asuransi Public Liability. Solusi profesional untuk berbagai sektor usaha.',
+    title: 'Asuransi Product Liability | Perlindungan Tanggung Jawab Produk',
+    description: 'Perlindungan terhadap tuntutan hukum akibat produk yang menyebabkan cedera atau kerugian kepada konsumen.',
     type: 'article',
     locale: 'id_ID',
   },
 }
 
-export default function PublicLiabilityPage() {
+export default function ProductLiabilityPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -57,155 +56,122 @@ export default function PublicLiabilityPage() {
           
           {/* Title */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-              <Scale className="w-6 h-6 text-indigo-600" />
+            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
+              <Package className="w-6 h-6 text-amber-600" />
             </div>
             <div>
-              <span className="text-xs text-indigo-600 font-medium">Asuransi Liability</span>
+              <span className="text-xs text-amber-600 font-medium">Asuransi Liability</span>
               <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
-                Asuransi Public Liability
+                Asuransi Product Liability
               </h1>
             </div>
           </div>
 
           {/* Intro */}
           <p className="mt-6 text-slate-700 leading-relaxed text-base md:text-lg">
-            Dalam menjalankan bisnis, interaksi dengan pelanggan, mitra, atau masyarakat umum 
-            tidak dapat dihindari. Risiko cedera badan atau kerusakan properti pihak ketiga 
-            dapat terjadi kapan saja, bahkan akibat kejadian yang tidak disengaja.{' '}
-            <strong>Asuransi Public Liability</strong> dirancang untuk melindungi perusahaan 
-            dari tuntutan hukum yang timbul akibat aktivitas operasional bisnis.
+            Sebagai produsen, distributor, atau penjual produk, Anda bertanggung jawab atas keamanan 
+            produk yang beredar di pasaran. Jika produk Anda menyebabkan cedera atau kerugian kepada 
+            konsumen, risiko tuntutan hukum dapat mengancam keuangan dan reputasi bisnis.{' '}
+            <strong>Asuransi Product Liability</strong> memberikan perlindungan terhadap risiko 
+            tuntutan hukum tersebut.
           </p>
 
-          {/* What is Public Liability */}
+          {/* What is Product Liability */}
           <h2 className="mt-10 text-xl md:text-2xl font-semibold text-blue-800 border-l-4 border-blue-600 pl-4">
-            Ruang Lingkup Perlindungan
+            Apa Itu Asuransi Product Liability?
           </h2>
 
           <p className="mt-4 text-slate-700 leading-relaxed">
-            Asuransi Public Liability memberikan jaminan terhadap berbagai risiko yang berkaitan 
-            dengan tanggung jawab hukum perusahaan terhadap pihak ketiga. Perlindungan ini sangat 
-            penting untuk menjaga stabilitas keuangan dan reputasi bisnis Anda.
+            Asuransi Product Liability adalah polis yang menjamin tanggung jawab hukum produsen, 
+            distributor, atau penjual terhadap klaim pihak ketiga (konsumen) akibat produk yang 
+            cacat, rusak, atau berbahaya. Perlindungan ini mencakup biaya ganti rugi, biaya hukum, 
+            dan biaya lain yang terkait dengan klaim tersebut.
           </p>
 
-          <div className="mt-6 bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+          <div className="mt-6 bg-amber-50 p-6 rounded-xl border border-amber-100">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
                 <AlertTriangle className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-semibold text-indigo-800 text-lg">Risiko yang Dijamin</h3>
+              <h3 className="font-semibold text-amber-800 text-lg">Risiko yang Dijamin</h3>
             </div>
             <ul className="text-sm text-slate-700 space-y-2">
               <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
-                <span>Cedera badan pihak ketiga di area operasional</span>
+                <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                <span>Cedera badan konsumen akibat produk cacat</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
-                <span>Kerusakan properti milik pihak lain</span>
+                <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                <span>Kerusakan properti konsumen akibat produk</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                <span>Kerugian finansial akibat produk tidak sesuai spesifikasi</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
                 <span>Biaya pembelaan hukum dan pengacara</span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
-                <span>Penyelesaian klaim sesuai putusan pengadilan atau kesepakatan</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
-                <span>Biaya medis darurat untuk pihak ketiga</span>
+                <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                <span>Biaya recall produk (dengan perluasan)</span>
               </li>
             </ul>
           </div>
 
           {/* Siapa yang Membutuhkan */}
           <h2 className="mt-10 text-xl md:text-2xl font-semibold text-blue-800 border-l-4 border-blue-600 pl-4">
-            Siapa yang Membutuhkan?
+            Siapa yang Membutuhkan Asuransi Ini?
           </h2>
 
           <p className="mt-4 text-slate-700 leading-relaxed">
-            Asuransi Public Liability sangat relevan untuk berbagai jenis usaha yang memiliki 
-            interaksi langsung dengan publik. Berikut adalah beberapa sektor yang umumnya 
-            memerlukan perlindungan ini:
+            Asuransi Product Liability relevan untuk berbagai pihak yang terlibat dalam rantai 
+            pasok produk, dari produsen hingga penjual ritel. Berikut adalah pihak-pihak yang 
+            umumnya memerlukan perlindungan ini:
           </p>
 
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Pemilik Gedung</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Produsen</span>
               </div>
-              <p className="text-sm text-slate-600">Properti komersial dan perkantoran</p>
+              <p className="text-sm text-slate-600">Pabrikan dan produsen produk konsumen</p>
             </div>
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Hotel & Mall</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Distributor</span>
               </div>
-              <p className="text-sm text-slate-600">Pusat perbelanjaan dan perhotelan</p>
+              <p className="text-sm text-slate-600">Perusahaan distribusi dan grosir</p>
             </div>
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Rumah Sakit & Klinik</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Retailer</span>
               </div>
-              <p className="text-sm text-slate-600">Fasilitas kesehatan dan medis</p>
+              <p className="text-sm text-slate-600">Toko ritel dan marketplace</p>
             </div>
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Event Organizer</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Importir</span>
               </div>
-              <p className="text-sm text-slate-600">Penyelenggara acara dan konser</p>
+              <p className="text-sm text-slate-600">Perusahaan importir produk luar negeri</p>
             </div>
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Perusahaan Manufaktur</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Industri Makanan</span>
               </div>
-              <p className="text-sm text-slate-600">Pabrik dan industri produksi</p>
+              <p className="text-sm text-slate-600">Produsen makanan dan minuman</p>
             </div>
-            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-indigo-300 transition-colors">
+            <div className="bg-white border border-slate-200 p-4 rounded-lg hover:border-amber-300 transition-colors">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-5 h-5 text-indigo-600" />
-                <span className="font-medium text-slate-800">Perusahaan Jasa</span>
+                <Building2 className="w-5 h-5 text-amber-600" />
+                <span className="font-medium text-slate-800">Industri Farmasi</span>
               </div>
-              <p className="text-sm text-slate-600">Jasa layanan dan konsultasi</p>
-            </div>
-          </div>
-
-          {/* Mengapa Penting */}
-          <h2 className="mt-10 text-xl md:text-2xl font-semibold text-blue-800 border-l-4 border-blue-600 pl-4">
-            Mengapa Asuransi Ini Penting?
-          </h2>
-
-          <p className="mt-4 text-slate-700 leading-relaxed">
-            Satu kejadian kecil, seperti pengunjung terpeleset atau kerusakan kendaraan tamu, 
-            dapat berujung pada tuntutan hukum bernilai besar. Tanpa perlindungan yang memadai, 
-            perusahaan harus menanggung biaya kompensasi dan pembelaan hukum secara mandiri. 
-            Dengan Asuransi Public Liability, risiko finansial tersebut dapat dialihkan sehingga 
-            bisnis tetap berjalan stabil.
-          </p>
-
-          <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <div className="bg-red-50 p-5 rounded-xl border border-red-100">
-              <h3 className="font-semibold text-red-800 mb-2">⚠️ Tanpa Asuransi PL</h3>
-              <ul className="text-sm text-slate-600 space-y-1">
-                <li>• Biaya ganti rugi 100% ditanggung perusahaan</li>
-                <li>• Biaya pengacara dan pengadilan sendiri</li>
-                <li>• Reputasi bisnis terancam</li>
-                <li>• Potensi kebangkrutan klaim besar</li>
-              </ul>
-            </div>
-            <div className="bg-green-50 p-5 rounded-xl border border-green-100">
-              <h3 className="font-semibold text-green-800 mb-2">✅ Dengan Asuransi PL</h3>
-              <ul className="text-sm text-slate-600 space-y-1">
-                <li>• Klaim ditanggung hingga limit polis</li>
-                <li>• Biaya hukum dicover asuransi</li>
-                <li>• Reputasi bisnis terlindungi</li>
-                <li>• Keuangan perusahaan stabil</li>
-              </ul>
+              <p className="text-sm text-slate-600">Produsen obat dan alat kesehatan</p>
             </div>
           </div>
 
@@ -215,21 +181,57 @@ export default function PublicLiabilityPage() {
           </h2>
 
           <p className="mt-4 text-slate-700 leading-relaxed">
-            Berikut adalah beberapa contoh situasi yang dapat menjadi klaim Asuransi Public Liability:
+            Berikut adalah beberapa contoh situasi yang dapat menjadi klaim Asuransi Product Liability:
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-400">
-              <p className="font-medium text-slate-800">💧 Lantai Licin di Mall</p>
-              <p className="text-sm text-slate-600 mt-1">Pengunjung terpeleset di area lantai basah tanpa tanda peringatan, mengalami patah tulang.</p>
+            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
+              <p className="font-medium text-slate-800">🍽️ Produk Makanan Tercemar</p>
+              <p className="text-sm text-slate-600 mt-1">Konsumen mengalami keracunan makanan akibat produk makanan yang terkontaminasi bakteri.</p>
             </div>
-            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-400">
-              <p className="font-medium text-slate-800">🚗 Kendaraan Tamu Rusak</p>
-              <p className="text-sm text-slate-600 mt-1">Pohon di area parkir tumbang menimpa mobil pengunjung akibat angin kencang.</p>
+            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
+              <p className="font-medium text-slate-800">🧸 Mainan Berbahaya</p>
+              <p className="text-sm text-slate-600 mt-1">Mainan anak memiliki bagian kecil yang lepas dan menimbulkan risiko tersedak.</p>
             </div>
-            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-400">
-              <p className="font-medium text-slate-800">🎪 Kejadian di Event</p>
-              <p className="text-sm text-slate-600 mt-1">Tribune penonton ambruk saat konser, menyebabkan cedera pada beberapa pengunjung.</p>
+            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
+              <p className="font-medium text-slate-800">🔌 Alat Elektronik Rusak</p>
+              <p className="text-sm text-slate-600 mt-1">Alat elektronik mengalami korsleting dan menyebabkan kebakaran di rumah konsumen.</p>
+            </div>
+            <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-400">
+              <p className="font-medium text-slate-800">💊 Obat Berbahaya</p>
+              <p className="text-sm text-slate-600 mt-1">Obat memiliki efek samping yang tidak tercantum dalam label peringatan.</p>
+            </div>
+          </div>
+
+          {/* Mengapa Penting */}
+          <h2 className="mt-10 text-xl md:text-2xl font-semibold text-blue-800 border-l-4 border-blue-600 pl-4">
+            Mengapa Perlindungan Ini Penting?
+          </h2>
+
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            Klaim product liability dapat bernilai sangat besar, terutama jika produk Anda beredar 
+            secara luas. Satu produk cacat dapat menyebabkan banyak klaim dari konsumen yang berbeda. 
+            Tanpa asuransi, perusahaan dapat menghadapi kerugian finansial yang signifikan.
+          </p>
+
+          <div className="mt-6 grid md:grid-cols-2 gap-4">
+            <div className="bg-red-50 p-5 rounded-xl border border-red-100">
+              <h3 className="font-semibold text-red-800 mb-2">⚠️ Tanpa Asuransi Product Liability</h3>
+              <ul className="text-sm text-slate-600 space-y-1">
+                <li>• Biaya ganti rugi 100% ditanggung sendiri</li>
+                <li>• Biaya pengacara dan pengadilan sendiri</li>
+                <li>• Reputasi merek rusak</li>
+                <li>• Potensi kebangkrutan</li>
+              </ul>
+            </div>
+            <div className="bg-green-50 p-5 rounded-xl border border-green-100">
+              <h3 className="font-semibold text-green-800 mb-2">✅ Dengan Asuransi Product Liability</h3>
+              <ul className="text-sm text-slate-600 space-y-1">
+                <li>• Klaim ditanggung hingga limit polis</li>
+                <li>• Biaya hukum tercover</li>
+                <li>• Perlindungan reputasi bisnis</li>
+                <li>• Bisnis tetap berjalan stabil</li>
+              </ul>
             </div>
           </div>
 
@@ -239,50 +241,50 @@ export default function PublicLiabilityPage() {
           </h2>
 
           <p className="mt-4 text-slate-700 leading-relaxed">
-            Setiap bisnis memiliki profil risiko berbeda, sehingga diperlukan analisis menyeluruh 
-            sebelum penentuan struktur polis. Berikut faktor-faktor yang mempengaruhi besaran premi:
+            Premi asuransi product liability ditentukan berdasarkan berbagai faktor yang mencerminkan 
+            tingkat risiko produk Anda:
           </p>
 
           <ul className="mt-4 bg-slate-50 p-5 rounded-xl grid sm:grid-cols-2 gap-3">
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              Jenis usaha dan aktivitas
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
+              Jenis dan kategori produk
             </li>
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              Skala operasional
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
+              Volume penjualan tahunan
             </li>
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              Jumlah pengunjung atau pelanggan
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
+              Pasar distribusi (lokal/ekspor)
             </li>
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              Lokasi usaha
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
+              Standar quality control
             </li>
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
               Riwayat klaim sebelumnya
             </li>
             <li className="flex items-center gap-3 text-slate-700">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
+              <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
               Limit pertanggungan
             </li>
           </ul>
 
           {/* Konsultasi */}
           <h2 className="mt-10 text-xl md:text-2xl font-semibold text-blue-800 border-l-4 border-blue-600 pl-4">
-            Konsultasi Asuransi Public Liability
+            Konsultasi Asuransi Product Liability
           </h2>
 
           <p className="mt-4 text-slate-700 leading-relaxed">
-            Lindungi reputasi dan stabilitas bisnis Anda dari potensi tuntutan hukum pihak ketiga. 
-            Konsultasikan kebutuhan perlindungan Anda untuk mendapatkan struktur polis yang optimal.
+            Lindungi bisnis Anda dari risiko tuntutan hukum akibat produk. Konsultasikan kebutuhan 
+            perlindungan product liability Anda untuk mendapatkan struktur polis yang optimal.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://wa.me/628131556592?text=Halo%20Pak%20Rio,%20saya%20ingin%20konsultasi%20Asuransi%20Public%20Liability"
+              href="https://wa.me/628131556592?text=Halo%20Pak%20Rio,%20saya%20ingin%20konsultasi%20Asuransi%20Product%20Liability"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
@@ -318,15 +320,15 @@ export default function PublicLiabilityPage() {
 
             <ul className="mt-4 space-y-2 text-blue-700">
               <li>
-                <Link href="/asuransi-liability-limbah-b3" className="hover:underline flex items-center gap-2">
+                <Link href="/asuransi-public-liability" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Liability Limbah B3
+                  Asuransi Public Liability
                 </Link>
               </li>
               <li>
-                <Link href="/asuransi-product-liability" className="hover:underline flex items-center gap-2">
+                <Link href="/asuransi-liability-limbah-b3" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Product Liability
+                  Asuransi Liability Limbah B3
                 </Link>
               </li>
               <li>
@@ -375,7 +377,7 @@ export default function PublicLiabilityPage() {
           {/* Disclaimer */}
           <p className="mt-8 text-sm text-slate-500 border-t pt-6">
             <strong>Disclaimer:</strong> Informasi di atas bersifat umum. Syarat dan ketentuan 
-            polis dapat berbeda tergantung underwriting dan karakteristik bisnis. Untuk informasi 
+            polis dapat berbeda tergantung underwriting dan karakteristik produk. Untuk informasi 
             lebih akurat, silakan hubungi kami untuk konsultasi.
           </p>
 
@@ -386,8 +388,8 @@ export default function PublicLiabilityPage() {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Article",
-                "headline": "Asuransi Public Liability",
-                "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
+                "headline": "Asuransi Product Liability",
+                "description": "Perlindungan terhadap tuntutan hukum akibat produk yang menyebabkan cedera atau kerugian kepada konsumen.",
                 "author": {
                   "@type": "Person",
                   "name": "Rio Mardiansyah"
@@ -411,26 +413,26 @@ export default function PublicLiabilityPage() {
                 mainEntity: [
                   {
                     "@type": "Question",
-                    name: "Apa itu Asuransi Public Liability?",
+                    name: "Apa itu Asuransi Product Liability?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Asuransi Public Liability adalah perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis.",
+                      text: "Asuransi Product Liability adalah perlindungan terhadap tuntutan hukum akibat produk yang menyebabkan cedera atau kerugian kepada konsumen.",
                     },
                   },
                   {
                     "@type": "Question",
-                    name: "Siapa yang membutuhkan Asuransi Public Liability?",
+                    name: "Siapa yang membutuhkan Asuransi Product Liability?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Perusahaan, pemilik gedung, hotel, mall, rumah sakit, event organizer, dan berbagai jenis usaha yang berinteraksi dengan publik.",
+                      text: "Produsen, distributor, importir, dan retailer yang memasarkan produk kepada konsumen memerlukan perlindungan ini.",
                     },
                   },
                   {
                     "@type": "Question",
-                    name: "Apakah asuransi ini menanggung biaya hukum?",
+                    name: "Apa saja yang dicakup oleh polis ini?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Ya, polis umumnya mencakup biaya pembelaan hukum sesuai dengan ketentuan yang berlaku.",
+                      text: "Polis mencakup cedera badan konsumen, kerusakan properti, biaya hukum, dan dengan perluasan dapat mencakup biaya recall produk.",
                     },
                   },
                 ],
