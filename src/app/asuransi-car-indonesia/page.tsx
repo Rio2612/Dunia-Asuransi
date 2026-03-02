@@ -322,6 +322,18 @@ export default function CARPage() {
                 </Link>
               </li>
               <li>
+                <Link href="/asuransi-public-liability" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                  Asuransi Public Liability
+                </Link>
+              </li>
+              <li>
+                <Link href="/asuransi-liability-limbah-b3" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                  Asuransi Liability Limbah B3
+                </Link>
+              </li>
+              <li>
                 <Link href="/asuransi-kendaraan-batam" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
                   Asuransi Kendaraan
