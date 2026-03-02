@@ -315,6 +315,12 @@ export default function LimbahB3Page() {
 
             <ul className="mt-4 space-y-2 text-blue-700">
               <li>
+                <Link href="/asuransi-liability" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                  Asuransi Liability (Overview)
+                </Link>
+              </li>
+              <li>
                 <Link href="/asuransi-public-liability" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
                   Asuransi Public Liability
