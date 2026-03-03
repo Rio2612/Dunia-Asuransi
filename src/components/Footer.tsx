@@ -56,7 +56,7 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
-              Partner asuransi terpercaya Anda. Kami siap membantu menemukan 
+              Konsultasi sekarang. Kami siap membantu menemukan 
               perlindungan terbaik untuk kendaraan, properti, bisnis, dan diri Anda 
               dengan layanan profesional.
             </p>
