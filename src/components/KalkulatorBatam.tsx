@@ -6,7 +6,7 @@ export default function KalkulatorBatam() {
   const [open, setOpen] = useState(false);
   const [harga, setHarga] = useState<number>(0);
   const [tahun, setTahun] = useState<number>(2024);
-  const [jenis, setJenis] = useState("allrisk");
+  const [jenis, setJenis] = useState<"allrisk" | "tlo">("allrisk");
   const [banjir, setBanjir] = useState(false);
   const [gempa, setGempa] = useState(false);
   const [srcc, setSrcc] = useState(false);
@@ -15,11 +15,17 @@ export default function KalkulatorBatam() {
   const currentYear = new Date().getFullYear();
   const usia = currentYear - tahun;
 
-  // 🔥 RATE ZONA 1 (EDIT SESUAI PDF OJK)
+  // AUTO TLO JIKA USIA > 8
+  useEffect(() => {
+    if (usia > 8 && jenis === "allrisk") {
+      setJenis("tlo");
+    }
+  }, [usia, jenis]);
+
+  // RATE ZONA 1 (EDIT SESUAI OJK)
   const rateAllRisk = 0.038;
   const rateTLO = 0.008;
-  const rateTPL = 0.001; // contoh 0.1%
-
+  const rateTPL = 0.001;
   const rateBanjir = 0.001;
   const rateGempa = 0.001;
   const rateSRCC = 0.0005;
@@ -32,19 +38,14 @@ export default function KalkulatorBatam() {
       return;
     }
 
-    if (usia > 8) {
-      setJenis("tlo");
-    }
-
     let premi =
       jenis === "allrisk"
         ? harga * rateAllRisk
         : harga * rateTLO;
 
-    // TPL otomatis 25 juta
+    // TPL otomatis
     premi += harga * rateTPL;
 
-    // Perluasan
     if (banjir) premi += harga * rateBanjir;
     if (gempa) premi += harga * rateGempa;
     if (srcc) premi += harga * rateSRCC;
@@ -57,16 +58,14 @@ export default function KalkulatorBatam() {
   const kirimWA = () => {
     if (!total) return;
 
-    const pesan = `
-Halo, saya ingin Asuransi Mobil Batam
+    const pesan = `Halo, saya ingin Asuransi Mobil Batam
 
 Harga: Rp ${harga.toLocaleString("id-ID")}
 Tahun: ${tahun}
 Jenis: ${jenis.toUpperCase()}
-Perluasan:
-- Banjir: ${banjir ? "Ya" : "Tidak"}
-- Gempa: ${gempa ? "Ya" : "Tidak"}
-- SRCC: ${srcc ? "Ya" : "Tidak"}
+Banjir: ${banjir ? "Ya" : "Tidak"}
+Gempa: ${gempa ? "Ya" : "Tidak"}
+SRCC: ${srcc ? "Ya" : "Tidak"}
 
 Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
 `;
@@ -107,11 +106,6 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
                 Kendaraan usia di atas 8 tahun hanya tersedia TLO.
               </div>
             )}
-            useEffect(() => {
-  if (usia > 8 && jenis === "allrisk") {
-    setJenis("tlo");
-  }
-}, [usia]);
 
             <input
               type="number"
@@ -127,25 +121,30 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
               onChange={(e) => setTahun(Number(e.target.value))}
             />
 
-         <select
-  className="w-full border p-3 rounded mb-4"
-  value={jenis}
-  onChange={(e) => setJenis(e.target.value)}
->
-  {usia <= 8 && (
-    <option value="allrisk">All Risk</option>
-  )}
-  <option value="tlo">TLO</option>
-</select>
+            <select
+              className="w-full border p-3 rounded mb-4"
+              value={jenis}
+              onChange={(e) =>
+                setJenis(e.target.value as "allrisk" | "tlo")
+              }
+            >
+              {usia <= 8 && (
+                <option value="allrisk">All Risk</option>
+              )}
+              <option value="tlo">TLO</option>
+            </select>
 
             <div className="mb-4">
               <p className="font-semibold mb-2">Perluasan:</p>
+
               <label className="block">
                 <input type="checkbox" onChange={() => setBanjir(!banjir)} /> Banjir
               </label>
+
               <label className="block">
                 <input type="checkbox" onChange={() => setGempa(!gempa)} /> Gempa
               </label>
+
               <label className="block">
                 <input type="checkbox" onChange={() => setSrcc(!srcc)} /> SRCC
               </label>
@@ -158,7 +157,7 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
               Hitung Premi
             </button>
 
-            {total && (
+            {total !== null && (
               <div className="mt-5 text-center">
                 <p className="text-lg font-bold">
                   Total Premi: Rp {total.toLocaleString("id-ID")}
@@ -166,6 +165,7 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
                 <p className="text-sm text-gray-500 mb-3">
                   Termasuk TPL 25 juta + Admin Rp100.000
                 </p>
+
                 <button
                   onClick={kirimWA}
                   className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition"
@@ -174,6 +174,7 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
                 </button>
               </div>
             )}
+
           </div>
         </div>
       )}
