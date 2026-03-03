@@ -1,102 +1,151 @@
 import type { Metadata } from "next";
 import KalkulatorBatam from "@/components/KalkulatorBatam";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Asuransi Mobil Batam | All Risk & TLO Resmi",
+  title: "Asuransi Mobil Batam | All Risk & TLO Terbaik",
   description:
-    "Asuransi Mobil Batam dengan pilihan All Risk dan TLO sesuai ketentuan OJK. Cek estimasi premi dan konsultasi gratis via WhatsApp.",
-  keywords:
-    "Asuransi Mobil Batam, Premi Asuransi Mobil Batam, All Risk Batam, TLO Batam",
+    "Asuransi Mobil Batam dengan perlindungan All Risk dan TLO sesuai ketentuan OJK. Simulasi premi cepat dan konsultasi langsung via WhatsApp.",
 };
 
 export default function Page() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-10 leading-8">
-      <h1 className="text-3xl font-bold mb-6">
-        Asuransi Mobil Batam
-      </h1>
+    <main className="bg-white text-slate-800">
 
-      <p className="mb-4">
-        Asuransi Mobil Batam memberikan perlindungan terhadap risiko
-        kerusakan maupun kehilangan kendaraan akibat kecelakaan,
-        pencurian, kebakaran, hingga bencana alam.
-      </p>
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Asuransi Mobil Batam
+          </h1>
+          <p className="text-lg md:text-xl mb-8 text-slate-200">
+            Perlindungan All Risk & TLO untuk kendaraan pribadi dan perusahaan 
+            di wilayah Batam dan Kepulauan Riau.
+          </p>
 
-      <p className="mb-6">
-        Perlindungan tersedia melalui jaringan mitra perusahaan
-        asuransi resmi di Indonesia, dengan proses yang dapat
-        dibantu tim rekanan di Batam dan Kepulauan Riau.
-      </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="https://wa.me/628131556592"
+              target="_blank"
+              className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-semibold transition"
+            >
+              Konsultasi Gratis
+            </a>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3">
-        Jenis Pertanggungan
-      </h2>
+            <button
+              onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
+              className="bg-white text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+            >
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+      </section>
 
-      <h3 className="text-xl font-semibold mt-4">
-        1. All Risk (Comprehensive)
-      </h3>
-      <p className="mb-4">
-        Menjamin kerusakan ringan hingga berat, termasuk lecet,
-        tabrakan, dan kehilangan total. Umumnya digunakan untuk
-        kendaraan usia 0–8 tahun.
-      </p>
+      {/* PENJELASAN */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6 text-center">
+          Pilihan Perlindungan
+        </h2>
 
-      <h3 className="text-xl font-semibold mt-4">
-        2. Total Loss Only (TLO)
-      </h3>
-      <p className="mb-6">
-        Menjamin kerugian jika kendaraan hilang atau mengalami
-        kerusakan lebih dari 75% dari nilai kendaraan. Cocok untuk
-        kendaraan usia di atas 8 tahun atau yang ingin premi lebih
-        terjangkau.
-      </p>
+        <div className="grid md:grid-cols-2 gap-8">
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3">
-        Faktor Penentu Premi
-      </h2>
-      <ul className="list-disc pl-6 mb-6">
-        <li>Nilai kendaraan</li>
-        <li>Tahun pembuatan</li>
-        <li>Wilayah penggunaan (Zona 1 Batam)</li>
-        <li>Jenis pertanggungan</li>
-        <li>Perluasan jaminan tambahan</li>
-      </ul>
+          {/* ALL RISK */}
+          <div className="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-3">
+              All Risk (Comprehensive)
+            </h3>
+            <p>
+              Menjamin kerusakan ringan hingga berat, termasuk lecet,
+              tabrakan, hingga kehilangan total. Cocok untuk kendaraan
+              usia 0–8 tahun.
+            </p>
+          </div>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3">
-        Mengapa Konsultasi Dengan Kami?
-      </h2>
-      <ul className="list-disc pl-6 mb-6">
-        <li>Respon cepat via WhatsApp</li>
-        <li>Dibantu rekanan di Batam</li>
-        <li>Pendampingan proses klaim</li>
-        <li>Simulasi premi transparan</li>
-      </ul>
+          {/* TLO */}
+          <div className="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-3">
+              Total Loss Only (TLO)
+            </h3>
+            <p>
+              Menjamin kehilangan atau kerusakan di atas 75% dari nilai
+              kendaraan. Pilihan tepat untuk premi lebih ekonomis atau
+              kendaraan usia di atas 8 tahun.
+            </p>
+          </div>
 
-      <div className="bg-slate-100 p-6 rounded-lg mt-8">
-        <p className="font-semibold">
+        </div>
+      </section>
+
+      {/* KEUNGGULAN */}
+      <section className="bg-slate-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            Mengapa Pilih Kami?
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+
+            <div>
+              <div className="text-3xl mb-2">⚡</div>
+              <p className="font-semibold">Respon Cepat</p>
+            </div>
+
+            <div>
+              <div className="text-3xl mb-2">🤝</div>
+              <p className="font-semibold">Dibantu Rekanan Batam</p>
+            </div>
+
+            <div>
+              <div className="text-3xl mb-2">📄</div>
+              <p className="font-semibold">Simulasi Transparan</p>
+            </div>
+
+            <div>
+              <div className="text-3xl mb-2">🛠</div>
+              <p className="font-semibold">Pendampingan Klaim</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* EDUKASI SEO SECTION */}
+      <section className="max-w-4xl mx-auto px-6 py-16 leading-8">
+        <h2 className="text-2xl font-bold mb-4">
+          Asuransi Mobil di Batam Sesuai Ketentuan OJK
+        </h2>
+        <p className="mb-4">
+          Perhitungan premi asuransi mobil di Batam mengikuti kategori
+          wilayah Zona 1. Besaran premi ditentukan berdasarkan nilai
+          kendaraan, usia kendaraan, serta jenis pertanggungan yang dipilih.
+        </p>
+
+        <p className="mb-4">
           Untuk memahami perlindungan kendaraan secara umum,
-          baca juga panduan lengkap kami tentang{" "}
-          <a
+          Anda dapat membaca panduan lengkap kami tentang{" "}
+          <Link
             href="/motor-vehicle-insurance"
-            className="text-blue-600 underline"
+            className="text-emerald-600 underline"
           >
             Asuransi Kendaraan Bermotor
-          </a>.
+          </Link>.
         </p>
-      </div>
 
-      <div className="mt-10 text-center">
-        <a
-          href="https://wa.me/628131556592"
-          target="_blank"
-          className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition"
-        >
-          Konsultasi Gratis via WhatsApp
-        </a>
-      </div>
+        <div className="mt-8 text-center">
+          <a
+            href="https://wa.me/628131556592"
+            target="_blank"
+            className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition"
+          >
+            Konsultasi Sekarang
+          </a>
+        </div>
+      </section>
 
-      {/* Popup Kalkulator */}
+      {/* POPUP KALKULATOR */}
       <KalkulatorBatam />
+
     </main>
   );
 }
