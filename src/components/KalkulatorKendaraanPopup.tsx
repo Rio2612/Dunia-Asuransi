@@ -147,9 +147,9 @@ export default function KalkulatorKendaraanPopup({ isOpen, onClose }: Kalkulator
   function kirimWA() {
     if (!hasil) return
     
-    const zonaText = hasil.zona === '1' ? 'Zona 1 (Jakarta, Jawa Barat)' : 
-                     hasil.zona === '2' ? 'Zona 2 (Jawa Tengah, Jawa Timur, Bali)' : 
-                     'Zona 3 (Luar Jawa & Bali)'
+    const zonaText = hasil.zona === '1' ? 'Zona 1 (Sumatera dan Kepulaian)' : 
+                     hasil.zona === '2' ? 'Zona 2 (DKI Jakarta, Jawa Barat, dan Banten)' : 
+                     'Zona 3 (Jawa Tengah, DIY, Jawa Timur, Kalimantan, Sulawesi, Bali, NTT, NTB, Papua, dll)'
     const jaminanText = hasil.jaminan === 'allrisk' ? 'All Risk (Comprehensive)' : 'TLO (Total Loss Only)'
     
     const pesan = `Halo Rio, saya tertarik untuk mengasuransikan kendaraan saya dengan detail:
