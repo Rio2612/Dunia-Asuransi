@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function KalkulatorBatam() {
   const [open, setOpen] = useState(false);
@@ -107,6 +107,11 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
                 Kendaraan usia di atas 8 tahun hanya tersedia TLO.
               </div>
             )}
+            useEffect(() => {
+  if (usia > 8 && jenis === "allrisk") {
+    setJenis("tlo");
+  }
+}, [usia]);
 
             <input
               type="number"
@@ -122,15 +127,16 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
               onChange={(e) => setTahun(Number(e.target.value))}
             />
 
-            <select
-              className="w-full border p-3 rounded mb-4"
-              value={usia > 8 ? "tlo" : jenis}
-              onChange={(e) => setJenis(e.target.value)}
-              disabled={usia > 8}
-            >
-              <option value="allrisk">All Risk</option>
-              <option value="tlo">TLO</option>
-            </select>
+         <select
+  className="w-full border p-3 rounded mb-4"
+  value={jenis}
+  onChange={(e) => setJenis(e.target.value)}
+>
+  {usia <= 8 && (
+    <option value="allrisk">All Risk</option>
+  )}
+  <option value="tlo">TLO</option>
+</select>
 
             <div className="mb-4">
               <p className="font-semibold mb-2">Perluasan:</p>
