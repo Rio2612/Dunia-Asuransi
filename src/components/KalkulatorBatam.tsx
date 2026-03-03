@@ -163,7 +163,7 @@ Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
                   Total Premi: Rp {total.toLocaleString("id-ID")}
                 </p>
                 <p className="text-sm text-gray-500 mb-3">
-                  Termasuk TPL 25 juta + Admin Rp100.000
+                  Termasuk TPL 25 juta + Admin Rp100.000 "Dapatkan Potongan khusus Hari ini"
                 </p>
 
                 <button
