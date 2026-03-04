@@ -137,16 +137,7 @@ export default function KalkulatorAsuransiMobilBatam() {
       rate = rateTLOZona3[jenisKey][indexRate]
     }
 
-    // Penyesuaian berdasarkan harga
-    if (harga <= 125000000) {
-      // Tidak ada penyesuaian
-    } else if (harga <= 200000000) {
-      rate *= 0.98
-    } else if (harga <= 400000000) {
-      rate *= 0.95
-    } else {
-      rate *= 0.92
-    }
+    
 
     // Hitung premi
     let premi = (harga * rate) / 100
