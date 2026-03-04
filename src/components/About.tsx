@@ -96,10 +96,12 @@ export default function About() {
                 <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg flex-shrink-0">
                   <Image
                     src="/foto-rio.jpg"
-                    alt="Rio Mardiansyah"
+                    alt="Rio Mardiansyah - Insurance Broker dengan pengalaman 10+ tahun di Dunia Asuransi"
                     width={80}
                     height={80}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="80px"
                   />
                 </div>
                 <div>

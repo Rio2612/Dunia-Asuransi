@@ -25,10 +25,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/80 z-10" />
         <Image
           src="/hero-image.png"
-          alt="Konsultasi Asuransi Profesional"
+          alt="Dunia Asuransi - Konsultan asuransi profesional untuk perlindungan kendaraan, properti, bisnis, dan diri Anda"
           fill
           className="object-cover object-center"
           priority
+          sizes="100vw"
+          quality={90}
         />
       </div>
 
