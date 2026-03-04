@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import BreadcrumbSchema, { breadcrumbConfigs } from '@/components/BreadcrumbSchema';
 
 const baseUrl = 'https://duniaasuransi.com';
 
@@ -76,6 +77,7 @@ const jsonLdArticle = {
 export default function AsuransiKargoPage() {
   return (
     <>
+      <BreadcrumbSchema items={breadcrumbConfigs.asuransiKargo} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
