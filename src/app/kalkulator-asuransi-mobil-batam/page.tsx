@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -11,18 +11,22 @@ import {
   MessageCircle, 
   CheckCircle, 
   Info, 
-  X, 
   Car,
   Shield,
   Clock,
   Award,
   Phone,
-  ArrowRight,
   MapPin,
-  DollarSign
+  DollarSign,
+  LucideIcon
 } from 'lucide-react'
 
-const whatsappNumber = '628131556592'
+// Definisi tipe untuk benefits
+interface BenefitItem {
+  icon: LucideIcon
+  title: string
+  description: string
+}
 
 const faqData = [
   {
@@ -51,7 +55,7 @@ const faqData = [
   }
 ]
 
-const benefits = [
+const benefits: BenefitItem[] = [
   {
     icon: Shield,
     title: 'Premi Kompetitif',
@@ -70,7 +74,6 @@ const benefits = [
 ]
 
 export default function KalkulatorAsuransiMobilBatam() {
-  const [isOpen, setIsOpen] = useState(false)
   const [hasil, setHasil] = useState<{
     premi: number
     harga: number
@@ -88,104 +91,104 @@ export default function KalkulatorAsuransiMobilBatam() {
     jaminan: ''
   })
 
-  // Batam = Zona 1 Sumatera dan Kepulauan di sekitarnya )
+  // Batam = Zona 1
+  const zonaBatam = '1'
 
-// Batam = Zona 1
-const zonaBatam = '1'
   function formatCurrency(value: string | number) {
-  const number = typeof value === 'string'
-    ? parseFloat(value)
-    : value
+    const number = typeof value === 'string'
+      ? parseFloat(value)
+      : value
 
-  if (!number) return ''
+    if (!number) return ''
 
-  return new Intl.NumberFormat('id-ID').format(number)
-  }
-
-// ==============================
-// FUNCTION HITUNG PREMI
-// ==============================
-function hitung(e: React.FormEvent) {
-  e.preventDefault()
-
-  const harga = parseFloat(formData.harga)
-  const tahun = parseInt(formData.tahun)
-  const jenisKendaraan = formData.jenis
-  const jaminan = formData.jaminan
-
-  if (!harga || !tahun || !jenisKendaraan || !jaminan) {
-    alert('Mohon lengkapi semua data!')
-    return
-  }
-
-  const tahunSekarang = new Date().getFullYear()
-  const usia = tahunSekarang - tahun
-
-  if (jaminan === 'allrisk' && usia > 10) {
-    alert('Kendaraan di atas 10 tahun tidak dapat All Risk')
-    return
+    return new Intl.NumberFormat('id-ID').format(number)
   }
 
   // ==============================
-  // RATE ZONA 1 (BATAM)
+  // FUNCTION HITUNG PREMI
   // ==============================
-  const rateAllRiskZona1 = {
-    mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
-    motor: [3.50, 2.80, 2.20, 1.30, 1.00]
+  function hitung(e: FormEvent) {
+    e.preventDefault()
+
+    const harga = parseFloat(formData.harga)
+    const tahun = parseInt(formData.tahun)
+    const jenisKendaraan = formData.jenis
+    const jaminan = formData.jaminan
+
+    if (!harga || !tahun || !jenisKendaraan || !jaminan) {
+      alert('Mohon lengkapi semua data!')
+      return
+    }
+
+    const tahunSekarang = new Date().getFullYear()
+    const usia = tahunSekarang - tahun
+
+    if (jaminan === 'allrisk' && usia > 10) {
+      alert('Kendaraan di atas 10 tahun tidak dapat All Risk')
+      return
+    }
+
+    // ==============================
+    // RATE ZONA 1 (BATAM)
+    // ==============================
+    const rateAllRiskZona1: Record<string, number[]> = {
+      mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
+      motor: [3.50, 2.80, 2.20, 1.30, 1.00]
+    }
+
+    const rateTLOZona1: Record<string, number[]> = {
+      mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
+      motor: [0.55, 0.45, 0.35, 0.25, 0.20]
+    }
+
+    function getIndexByHarga(h: number): number {
+      if (h <= 125_000_000) return 0
+      if (h <= 200_000_000) return 1
+      if (h <= 400_000_000) return 2
+      if (h <= 800_000_000) return 3
+      return 4
+    }
+
+    const indexRate = getIndexByHarga(harga)
+    const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
+
+    let rate =
+      jaminan === 'allrisk'
+        ? rateAllRiskZona1[jenisKey][indexRate]
+        : rateTLOZona1[jenisKey][indexRate]
+
+    const premi = (harga * rate) / 100
+
+    setHasil({
+      premi: Math.round(premi),
+      harga,
+      tahun,
+      zona: zonaBatam,
+      jenis: jenisKendaraan,
+      jaminan,
+      rate
+    })
   }
 
-  const rateTLOZona1 = {
-    mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
-    motor: [0.55, 0.45, 0.35, 0.25, 0.20]
+  // ==============================
+  // RESET
+  // ==============================
+  function reset() {
+    setFormData({
+      harga: '',
+      tahun: '',
+      jenis: '',
+      jaminan: ''
+    })
+    setHasil(null)
   }
 
-  function getIndexByHarga(h: number): number {
-    if (h <= 125_000_000) return 0
-    if (h <= 200_000_000) return 1
-    if (h <= 400_000_000) return 2
-    if (h <= 800_000_000) return 3
-    return 4
-  }
-
-  const indexRate = getIndexByHarga(harga)
-  const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
-
-  let rate =
-    jaminan === 'allrisk'
-      ? rateAllRiskZona1[jenisKey][indexRate]
-      : rateTLOZona1[jenisKey][indexRate]
-
-  const premi = (harga * rate) / 100
-
-  setHasil({
-    premi: Math.round(premi),
-    harga,
-    tahun,
-    zona: zonaBatam,
-    jenis: jenisKendaraan,
-    jaminan,
-    rate
-  })
-}
-
-// ==============================
-// RESET
-// ==============================
-function reset() {
-  setFormData({
-    harga: '',
-    tahun: '',
-    jenis: '',
-    jaminan: ''
-  })
-  setHasil(null)
-}
   function kirimWA() {
-  if (!hasil) return
+    if (!hasil) return
 
-  const nomorWA = "628xxxxxxxxxx" // GANTI dengan nomor kamu (format 62 tanpa +)
+    const nomorWA = "628xxxxxxxxxx" // GANTI dengan nomor kamu (format 62 tanpa +)
 
-  const pesan = `
+    const pesan = `
 Halo, saya ingin konsultasi Asuransi Mobil Batam
 
 Harga Kendaraan : Rp ${formatCurrency(hasil.harga)}
@@ -198,9 +201,10 @@ Estimasi Premi  : Rp ${formatCurrency(hasil.premi)}
 Mohon penjelasannya 🙏
 `
 
-  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`
-  window.open(url, "_blank")
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`
+    window.open(url, "_blank")
   }
+
   return (
     <>
       {/* JSON-LD Schemas */}
