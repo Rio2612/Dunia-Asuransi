@@ -1,189 +1,134 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function KalkulatorBatam() {
-  const [open, setOpen] = useState(false);
-  const [harga, setHarga] = useState<number>(0);
-  const [tahun, setTahun] = useState<number>(2024);
-  const [jenis, setJenis] = useState<"allrisk" | "tlo">("allrisk");
-  const [banjir, setBanjir] = useState(false);
-  const [gempa, setGempa] = useState(false);
-  const [srcc, setSrcc] = useState(false);
-  const [total, setTotal] = useState<number | null>(null);
+  const [hargaMobil, setHargaMobil] = useState("");
+  const [tipeAsuransi, setTipeAsuransi] = useState("allrisk");
+  const [jenisKendaraan, setJenisKendaraan] = useState("konvensional");
+  const [hasil, setHasil] = useState<number | null>(null);
 
-  const currentYear = new Date().getFullYear();
-  const usia = currentYear - tahun;
+  const hitungPremi = () => {
+    const harga = Number(hargaMobil);
+    if (!harga) return;
 
-  // AUTO TLO JIKA USIA > 8
-  useEffect(() => {
-    if (usia > 8 && jenis === "allrisk") {
-      setJenis("tlo");
-    }
-  }, [usia, jenis]);
+    // RATE ZONA 1 BATAM
+    const rate = {
+      allrisk: {
+        konvensional: 2.47,
+        listrik: 2.72,
+      },
+      tlo: {
+        konvensional: 0.44,
+        listrik: 0.48,
+      },
+    };
 
-  // RATE ZONA 1 (EDIT SESUAI OJK)
-  const rateAllRisk = 0.038;
-  const rateTLO = 0.008;
-  const rateTPL = 0.001;
-  const rateBanjir = 0.001;
-  const rateGempa = 0.001;
-  const rateSRCC = 0.0005;
+    const selectedRate =
+      rate[tipeAsuransi as "allrisk" | "tlo"][
+        jenisKendaraan as "konvensional" | "listrik"
+      ];
 
-  const biayaAdmin = 100000;
-
-  const hitung = () => {
-    if (!harga || harga <= 0) {
-      alert("Masukkan harga kendaraan");
-      return;
-    }
-
-    let premi =
-      jenis === "allrisk"
-        ? harga * rateAllRisk
-        : harga * rateTLO;
-
-    // TPL otomatis
-    premi += harga * rateTPL;
-
-    if (banjir) premi += harga * rateBanjir;
-    if (gempa) premi += harga * rateGempa;
-    if (srcc) premi += harga * rateSRCC;
-
-    premi += biayaAdmin;
-
-    setTotal(Math.round(premi));
+    const premi = (harga * selectedRate) / 100;
+    setHasil(premi);
   };
 
-  const kirimWA = () => {
-    if (!total) return;
-
-    const pesan = `Halo, saya ingin Asuransi Mobil Batam
-
-Harga: Rp ${harga.toLocaleString("id-ID")}
-Tahun: ${tahun}
-Jenis: ${jenis.toUpperCase()}
-Banjir: ${banjir ? "Ya" : "Tidak"}
-Gempa: ${gempa ? "Ya" : "Tidak"}
-SRCC: ${srcc ? "Ya" : "Tidak"}
-
-Estimasi Premi: Rp ${total.toLocaleString("id-ID")}
-`;
-
-    window.open(
-      `https://wa.me/628131556592?text=${encodeURIComponent(pesan)}`,
-      "_blank"
-    );
-  };
+  const risikoSendiri =
+    jenisKendaraan === "listrik" ? 500000 : 300000;
 
   return (
-    <>
-      {/* Floating Button */}
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 bg-emerald-600 text-white px-5 py-3 rounded-full shadow-xl hover:bg-emerald-700 transition z-50"
-      >
-        Simulasi Premi Batam
-      </button>
+    <main className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+      <div className="bg-white w-full max-w-xl p-8 rounded-2xl shadow-lg">
 
-      {open && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-white w-[95%] max-w-lg rounded-2xl p-6 shadow-2xl relative">
+        <h1 className="text-2xl font-bold mb-8 text-center">
+          Kalkulator Asuransi Mobil Batam
+        </h1>
 
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-4 right-5 text-xl"
-            >
-              ✕
-            </button>
-
-            <h3 className="text-2xl font-bold mb-4 text-slate-800">
-              Kalkulator Asuransi Mobil Batam
-            </h3>
-
-            {usia > 8 && (
-              <div className="bg-yellow-100 text-yellow-800 p-3 rounded mb-4 text-sm">
-                Kendaraan usia di atas 8 tahun hanya tersedia TLO.
-              </div>
-            )}
-
-            <input
-              type="number"
-              placeholder="Harga Kendaraan (Rp)"
-              className="w-full border p-3 rounded mb-3"
-              onChange={(e) => setHarga(Number(e.target.value))}
-            />
-
-            <input
-              type="number"
-              placeholder="Tahun Kendaraan"
-              className="w-full border p-3 rounded mb-3"
-              onChange={(e) => setTahun(Number(e.target.value))}
-            />
-
-            <select
-              className="w-full border p-3 rounded mb-4"
-              value={jenis}
-              onChange={(e) =>
-                setJenis(e.target.value as "allrisk" | "tlo")
-              }
-            >
-              {usia <= 8 && (
-                <option value="allrisk">All Risk</option>
-              )}
-              <option value="tlo">TLO</option>
-            </select>
-
-            <div className="mb-4">
-              <p className="font-semibold mb-2">Perluasan:</p>
-
-              <label className="block">
-                <input type="checkbox" onChange={() => setBanjir(!banjir)} /> Banjir
-              </label>
-
-              <label className="block">
-                <input type="checkbox" onChange={() => setGempa(!gempa)} /> Gempa
-              </label>
-
-              <label className="block">
-                <input type="checkbox" onChange={() => setSrcc(!srcc)} /> SRCC
-              </label>
-            </div>
-
-            <button
-              onClick={hitung}
-              className="w-full bg-slate-900 text-white py-3 rounded-lg hover:bg-slate-700 transition"
-            >
-              Hitung Premi
-            </button>
-
-            {total !== null && (
-              <div className="mt-5 text-center">
-                <p className="text-lg font-bold">
-                  Total Premi: Rp {total.toLocaleString("id-ID")}
-                </p>
-               <div className="mt-2 mb-3">
-  <p className="text-sm text-gray-500">
-    Termasuk TPL 25 juta + Admin Rp100.000
-  </p>
-
-  <p className="text-sm font-semibold text-emerald-600 mt-1">
-    Dapatkan Potongan Khusus Hari Ini
-  </p>
-</div>
-
-                <button
-                  onClick={kirimWA}
-                  className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition"
-                >
-                  Kirim ke WhatsApp
-                </button>
-              </div>
-            )}
-
-          </div>
+        {/* Harga Mobil */}
+        <div className="mb-5">
+          <label className="block mb-2 font-semibold">
+            Harga Mobil (Rp)
+          </label>
+          <input
+            type="text"
+            inputMode="numeric"
+            value={hargaMobil}
+            onChange={(e) =>
+              setHargaMobil(
+                e.target.value.replace(/[^0-9]/g, "")
+              )
+            }
+            placeholder="Contoh: 300000000"
+            className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-slate-400 outline-none"
+          />
         </div>
-      )}
-    </>
+
+        {/* Jenis Kendaraan */}
+        <div className="mb-5">
+          <label className="block mb-2 font-semibold">
+            Jenis Kendaraan
+          </label>
+          <select
+            value={jenisKendaraan}
+            onChange={(e) =>
+              setJenisKendaraan(e.target.value)
+            }
+            className="w-full border rounded-lg p-3"
+          >
+            <option value="konvensional">
+              Mobil Konvensional
+            </option>
+            <option value="listrik">
+              Mobil Listrik
+            </option>
+          </select>
+        </div>
+
+        {/* Tipe Asuransi */}
+        <div className="mb-6">
+          <label className="block mb-2 font-semibold">
+            Tipe Asuransi
+          </label>
+          <select
+            value={tipeAsuransi}
+            onChange={(e) =>
+              setTipeAsuransi(e.target.value)
+            }
+            className="w-full border rounded-lg p-3"
+          >
+            <option value="allrisk">
+              All Risk (Comprehensive)
+            </option>
+            <option value="tlo">
+              Total Loss Only (TLO)
+            </option>
+          </select>
+        </div>
+
+        {/* Button */}
+        <button
+          onClick={hitungPremi}
+          className="w-full bg-slate-900 text-white py-3 rounded-lg hover:bg-slate-700 transition"
+        >
+          Hitung Premi
+        </button>
+
+        {/* Hasil */}
+        {hasil !== null && (
+          <div className="mt-8 p-6 bg-slate-50 rounded-xl text-center border">
+            <p className="text-lg mb-2">
+              Estimasi Premi Tahunan
+            </p>
+            <p className="text-2xl font-bold mb-2">
+              Rp {hasil.toLocaleString("id-ID")}
+            </p>
+            <p>
+              Risiko Sendiri: Rp{" "}
+              {risikoSendiri.toLocaleString("id-ID")}
+            </p>
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
