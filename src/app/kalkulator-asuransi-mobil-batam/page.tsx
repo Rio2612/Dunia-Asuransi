@@ -104,17 +104,17 @@ export default function KalkulatorAsuransiMobilBatam() {
       return
     }
 
-    // Rate All Risk Zona 1 (Batam)
-    const rateAllRiskZona3 = {
-      mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
-      motor: [3.50, 2.80, 2.20, 1.30, 1.00]
-    }
+ // Rate All Risk Zona 1 (Batam)
+const rateAllRiskZona1 = {
+  mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
+  motor: [3.50, 2.80, 2.20, 1.30, 1.00]
+}
 
-    // Rate TLO Zona 3 (Batam)
-    const rateTLOZona3 = {
-      mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
-      motor: [0.55, 0.45, 0.35, 0.25, 0.20]
-    }
+// Rate TLO Zona 1 (Batam)
+const rateTLOZona1 = {
+  mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
+  motor: [0.55, 0.45, 0.35, 0.25, 0.20]
+}
 
 function getIndexByHarga(harga: number): number {
   if (harga <= 125_000_000) return 0
