@@ -31,7 +31,7 @@ const faqData = [
   },
   {
     question: 'Apa keuntungan asuransi mobil di Batam dibanding kota lain?',
-    answer: 'Batam masuk kategori Zona 3 yang memiliki rate premi lebih rendah dibanding Jakarta (Zona 1) dan Jawa (Zona 2). Artinya, Anda bisa mendapatkan perlindungan yang sama dengan premi lebih terjangkau. Selain itu, proses klaim tetap mudah dengan jaringan bengkel luas.'
+    answer: 'Batam masuk kategori Zona 1 yang memiliki rate premi lebih rendah dibanding Jakarta (Zona 1) dan Jawa (Zona 2). Artinya, Anda bisa mendapatkan perlindungan yang sama dengan premi lebih terjangkau. Selain itu, proses klaim tetap mudah dengan jaringan bengkel luas.'
   },
   {
     question: 'Apakah mobil bekas bisa diasuransikan di Batam?',
@@ -55,7 +55,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Premi Kompetitif',
-    description: 'Batam Zona 1 = rate lebih tinggi dari Jakarta'
+    description: 'Batam Zona 1 = Sesuai SE OJK 2017'
   },
   {
     icon: Clock,
@@ -138,11 +138,11 @@ export default function KalkulatorAsuransiMobilBatam() {
     }
 
     // Penyesuaian berdasarkan harga
-    if (harga <= 100000000) {
+    if (harga <= 125000000) {
       // Tidak ada penyesuaian
-    } else if (harga <= 250000000) {
+    } else if (harga <= 200000000) {
       rate *= 0.98
-    } else if (harga <= 500000000) {
+    } else if (harga <= 400000000) {
       rate *= 0.95
     } else {
       rate *= 0.92
