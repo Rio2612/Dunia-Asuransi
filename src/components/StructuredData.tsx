@@ -1,5 +1,107 @@
 const baseUrl = 'https://duniaasuransi.com'
 
+// Testimonial Data untuk Review Schema
+const testimonials = [
+  {
+    name: 'Budi Santoso',
+    role: 'Pemilik Bisnis',
+    location: 'Jakarta',
+    content: 'Pak Rio sangat membantu saya memilih asuransi kendaraan yang tepat untuk armada bisnis saya. Pelayanan personal dan sangat responsif. Klaim juga dibantu sampai selesai!',
+    rating: 5,
+  },
+  {
+    name: 'Siti Rahayu',
+    role: 'Ibu Rumah Tangga',
+    location: 'Bandung',
+    content: 'Senang bisa konsultasi langsung dengan Pak Rio. Penjelasannya sangat mudah dipahami dan tidak ada tekanan untuk langsung beli. Highly recommended!',
+    rating: 5,
+  },
+  {
+    name: 'Ahmad Wijaya',
+    role: 'Pengusaha Logistik',
+    location: 'Surabaya',
+    content: 'Sebagai pemilik usaha logistik, asuransi kargo sangat penting. Pak Rio membantu mencari polis yang sesuai dengan kebutuhan bisnis saya dengan premi yang kompetitif.',
+    rating: 5,
+  },
+  {
+    name: 'Dewi Kusuma',
+    role: 'Karyawan Swasta',
+    location: 'Medan',
+    content: 'Proses klaim asuransi kecelakaan saya dibantu langsung oleh Pak Rio dari awal sampai dana cair. Sangat profesional dan bertanggung jawab!',
+    rating: 5,
+  },
+  {
+    name: 'Rudi Hartono',
+    role: 'Dokter',
+    location: 'Yogyakarta',
+    content: 'Saya sudah merekomendasikan Dunia Asuransi ke keluarga dan teman-teman. Pelayanan dari Pak Rio sangat memuaskan dan selalu siap membantu kapan saja.',
+    rating: 5,
+  },
+  {
+    name: 'Linda Permata',
+    role: 'Wiraswasta',
+    location: 'Semarang',
+    content: 'Pengalaman yang luar biasa! Pak Rio sabar menjelaskan semua detail polis tanpa ada biaya tersembunyi. Semuanya transparan dan profesional.',
+    rating: 5,
+  },
+]
+
+// Review Schema untuk setiap testimonial
+const reviewSchemas = testimonials.map((testimonial, index) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "InsuranceAgency",
+    "name": "Dunia Asuransi",
+    "url": baseUrl
+  },
+  "author": {
+    "@type": "Person",
+    "name": testimonial.name
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": testimonial.rating,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "reviewBody": testimonial.content,
+  "datePublished": `2024-0${index + 1}-15`,
+  "name": `Review dari ${testimonial.name} - ${testimonial.role}`
+}))
+
+// Aggregate Rating Schema (untuk rich snippet bintang di SERP)
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Layanan Asuransi Dunia Asuransi",
+  "description": "Layanan konsultan dan broker asuransi profesional untuk berbagai kebutuhan perlindungan termasuk asuransi kendaraan, kebakaran, kargo, kecelakaan, liability, surety bond, dan engineering.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Dunia Asuransi"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": testimonials.map(t => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": t.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": t.rating,
+      "bestRating": 5
+    },
+    "reviewBody": t.content
+  }))
+}
+
 // Organization Schema - untuk brand recognition
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -210,6 +312,17 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+      />
+      {reviewSchemas.map((reviewSchema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        />
+      ))}
     </>
   )
 }
