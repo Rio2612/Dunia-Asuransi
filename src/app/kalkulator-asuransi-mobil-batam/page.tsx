@@ -65,7 +65,7 @@ const benefits = [
   {
     icon: Award,
     title: 'Klaim Mudah',
-    description: 'Memiliki Bengkel Rekanan Terpercaya'
+    description: 'Memliki Bengkel Rekanan Terpercaya'
   }
 ]
 
@@ -89,24 +89,14 @@ export default function KalkulatorAsuransiMobilBatam() {
   })
 
   // Batam = Zona 1 Sumatera dan Kepulauan di sekitarnya )
-  const zonaBatam = '1'
 
-  
+// Batam = Zona 1
+const zonaBatam = '1'
 
-    setHasil({
-      premi: Math.round(premi),
-      harga,
-      tahun,
-      zona: zonaBatam,
-      jenis: jenisKendaraan,
-      jaminan,
-      rate: Math.round(rate * 100) / 100
-    })
-  }
-
-  function reset() {
-    setFormData({
-      function hitung(e: React.FormEvent) {
+// ==============================
+// FUNCTION HITUNG PREMI
+// ==============================
+function hitung(e: React.FormEvent) {
   e.preventDefault()
 
   const harga = parseFloat(formData.harga)
@@ -122,16 +112,14 @@ export default function KalkulatorAsuransiMobilBatam() {
   const tahunSekarang = new Date().getFullYear()
   const usia = tahunSekarang - tahun
 
-  // Validasi usia kendaraan untuk All Risk
   if (jaminan === 'allrisk' && usia > 10) {
-    alert('Kendaraan di atas 10 tahun tidak dapat jaminan All Risk')
+    alert('Kendaraan di atas 10 tahun tidak dapat All Risk')
     return
   }
 
   // ==============================
   // RATE ZONA 1 (BATAM)
   // ==============================
-
   const rateAllRiskZona1 = {
     mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
     motor: [3.50, 2.80, 2.20, 1.30, 1.00]
@@ -153,13 +141,10 @@ export default function KalkulatorAsuransiMobilBatam() {
   const indexRate = getIndexByHarga(harga)
   const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
 
-  let rate = 0
-
-  if (jaminan === 'allrisk') {
-    rate = rateAllRiskZona1[jenisKey][indexRate]
-  } else {
-    rate = rateTLOZona1[jenisKey][indexRate]
-  }
+  let rate =
+    jaminan === 'allrisk'
+      ? rateAllRiskZona1[jenisKey][indexRate]
+      : rateTLOZona1[jenisKey][indexRate]
 
   const premi = (harga * rate) / 100
 
@@ -170,42 +155,22 @@ export default function KalkulatorAsuransiMobilBatam() {
     zona: zonaBatam,
     jenis: jenisKendaraan,
     jaminan,
-    rate: rate
+    rate
   })
-      }harga: '',
-      tahun: '',
-      jenis: '',
-      jaminan: ''
-    })
-    setHasil(null)
-  }
+}
 
-  function kirimWA() {
-    if (!hasil) return
-    
-    const jaminanText = hasil.jaminan === 'allrisk' ? 'All Risk (Comprehensive)' : 'TLO (Total Loss Only)'
-    
-    const pesan = `Halo Rio, saya tertarik untuk mengasuransikan kendaraan saya di Batam dengan detail:
-
-*Tipe:* ${hasil.jenis === 'mobil' ? 'Mobil' : 'Motor'}
-*Tahun:* ${hasil.tahun}
-*Harga Pertanggungan:* Rp ${hasil.harga.toLocaleString('id-ID')}
-*Lokasi:* Batam (Zona 3)
-*Jenis Jaminan:* ${jaminanText}
-*Rate:* ${hasil.rate}%
-
-*Estimasi Premi:* Rp ${hasil.premi.toLocaleString('id-ID')}
-
-Mohon informasi lebih lanjut. Terima kasih!`
-
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(pesan)}`, '_blank')
-  }
-
-  const formatCurrency = (value: string) => {
-    const number = value.replace(/\D/g, '')
-    return number.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-  }
-
+// ==============================
+// RESET
+// ==============================
+function reset() {
+  setFormData({
+    harga: '',
+    tahun: '',
+    jenis: '',
+    jaminan: ''
+  })
+  setHasil(null)
+}
   return (
     <>
       {/* JSON-LD Schemas */}
