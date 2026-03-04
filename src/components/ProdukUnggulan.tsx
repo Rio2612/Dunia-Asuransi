@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -14,8 +13,6 @@ import {
   CheckCircle,
   ExternalLink
 } from 'lucide-react'
-import KalkulatorKendaraanPopup from './KalkulatorKendaraanPopup'
-import KalkulatorKebakaranPopup from './KalkulatorKebakaranPopup'
 
 const productCategories = [
   {
@@ -116,11 +113,7 @@ const itemVariants = {
 }
 
 export default function ProdukUnggulan() {
-  const [openKendaraan, setOpenKendaraan] = useState(false)
-  const [openKebakaran, setOpenKebakaran] = useState(false)
-
   return (
-    <>
       <section id="produk-unggulan" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           {/* Section Header */}
@@ -222,16 +215,5 @@ export default function ProdukUnggulan() {
           </motion.div>
         </div>
       </section>
-
-      {/* Popups */}
-      <KalkulatorKendaraanPopup 
-        isOpen={openKendaraan} 
-        onClose={() => setOpenKendaraan(false)} 
-      />
-      <KalkulatorKebakaranPopup 
-        isOpen={openKebakaran} 
-        onClose={() => setOpenKebakaran(false)} 
-      />
-    </>
-  )
+    )
 }
