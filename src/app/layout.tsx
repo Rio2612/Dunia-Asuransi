@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   keywords: ["Broker Asuransi", "Agen Asuransi", "Asuransi Indonesia", "Asuransi Kendaraan", "Asuransi Kebakaran", "Asuransi Kargo", "Asuransi Kecelakaan", "Rio Mardiansyah", "Dunia Asuransi", "Klaim Cepat"],
   authors: [{ name: "Rio Mardiansyah" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   alternates: {
     canonical: baseUrl,
