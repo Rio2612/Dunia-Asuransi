@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Shield, ArrowLeft, Building2, Phone, MessageCircle, AlertTriangle, Users, Wrench, CheckCircle } from 'lucide-react'
 
+const baseUrl = 'https://duniaasuransi.com'
+
 export const metadata: Metadata = {
   title: 'Asuransi CAR Indonesia | Contractor All Risks Profesional | Dunia Asuransi',
   description: 'Asuransi CAR Indonesia (Contractor\'s All Risks) memberikan perlindungan menyeluruh untuk proyek konstruksi dari risiko kerusakan fisik hingga tanggung jawab hukum pihak ketiga. Konsultasi profesional sekarang.',
@@ -15,10 +17,14 @@ export const metadata: Metadata = {
     'asuransi pembangunan',
     'asuransi proyek',
   ],
+  alternates: {
+    canonical: `${baseUrl}/asuransi-car-indonesia`,
+  },
   authors: [{ name: 'Rio Mardiansyah' }],
   openGraph: {
     title: 'Asuransi CAR Indonesia | Contractor All Risks Profesional',
     description: 'Perlindungan proyek konstruksi secara menyeluruh dengan Asuransi Contractor\'s All Risks di Indonesia. Konsultasikan kebutuhan proyek Anda sekarang.',
+    url: `${baseUrl}/asuransi-car-indonesia`,
     type: 'article',
     locale: 'id_ID',
   },

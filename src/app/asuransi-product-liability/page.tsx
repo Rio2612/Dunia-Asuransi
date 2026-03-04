@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+
+const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import { Shield, ArrowLeft, Package, Phone, MessageCircle, AlertTriangle, CheckCircle, Building2 } from 'lucide-react'
 
@@ -18,6 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuransi Product Liability | Perlindungan Tanggung Jawab Produk',
     description: 'Perlindungan terhadap tuntutan hukum akibat produk yang menyebabkan cedera atau kerugian kepada konsumen.',
+    url: `${baseUrl}/asuransi-product-liability`,
     type: 'article',
     locale: 'id_ID',
   },

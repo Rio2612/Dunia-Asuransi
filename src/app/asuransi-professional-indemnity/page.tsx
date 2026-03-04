@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Asuransi Professional Indemnity Indonesia | Perlindungan Profesi',
   description: 'Asuransi Professional Indemnity melindungi profesional dari klaim akibat kelalaian, kesalahan, atau kelalaian dalam memberikan jasa profesional. Konsultasi gratis: 0813-1556-592.',
   keywords: 'asuransi professional indemnity, asuransi tanggung jawab profesi, professional liability insurance, asuransi untuk konsultan, asuransi pengacara, asuransi akuntan, asuransi dokter, asuransi arsitek, klaim profesional, perlindungan profesi Indonesia',
+  alternates: {
+    canonical: `${baseUrl}/asuransi-professional-indemnity`,
+  },
   openGraph: {
     title: 'Asuransi Professional Indemnity Indonesia | Perlindungan Profesi',
     description: 'Asuransi Professional Indemnity melindungi profesional dari klaim akibat kelalaian, kesalahan, atau kelalaian dalam memberikan jasa profesional.',
+    url: `${baseUrl}/asuransi-professional-indemnity`,
     type: 'article',
     locale: 'id_ID',
   },

@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Industrial All Risk (IAR) | Perlindungan Properti Industri Menyeluruh | Dunia Asuransi',
   description: 'Industrial All Risk (IAR) memberikan perlindungan menyeluruh terhadap risiko kerusakan properti industri seperti pabrik, gudang, dan fasilitas manufaktur.',
   keywords: 'Industrial All Risk, Asuransi Pabrik, Asuransi Gudang, Asuransi Properti Industri, IAR Insurance, asuransi manufaktur, asuransi fasilitas industri',
+  alternates: {
+    canonical: `${baseUrl}/industrial-all-risk`,
+  },
   openGraph: {
     title: 'Industrial All Risk (IAR) | Perlindungan Properti Industri Menyeluruh',
     description: 'Perlindungan menyeluruh untuk properti industri dan fasilitas manufaktur.',
+    url: `${baseUrl}/industrial-all-risk`,
     type: 'article',
     locale: 'id_ID',
   },

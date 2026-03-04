@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Protection & Indemnity (P&I) | Asuransi Tanggung Jawab Kapal | Dunia Asuransi',
   description: 'Protection & Indemnity (P&I) memberikan perlindungan tanggung jawab hukum pemilik kapal terhadap pihak ketiga, termasuk cedera awak kapal, kerusakan properti, dan pencemaran laut.',
   keywords: 'protection and indemnity, P&I insurance, asuransi P&I, asuransi tanggung jawab kapal, marine liability, shipowner liability, asuransi marine, tanggung jawab pihak ketiga',
+  alternates: {
+    canonical: `${baseUrl}/protection-indemnity`,
+  },
   openGraph: {
     title: 'Protection & Indemnity (P&I) | Asuransi Tanggung Jawab Kapal',
     description: 'P&I Insurance melindungi pemilik kapal terhadap tanggung jawab hukum kepada pihak ketiga.',
+    url: `${baseUrl}/protection-indemnity`,
     type: 'article',
     locale: 'id_ID',
   },

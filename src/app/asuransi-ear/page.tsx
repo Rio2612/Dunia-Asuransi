@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Asuransi Erection All Risk (EAR) | Pemasangan Mesin & Instalasi',
   description: 'Asuransi EAR melindungi risiko selama proses pemasangan mesin, instalasi pabrik, dan proyek mekanikal-elektrikal. Konsultasi kebutuhan proyek Anda: 0813-1556-592.',
   keywords: 'asuransi ear, erection all risk, asuransi pemasangan mesin, asuransi instalasi pabrik, asuransi proyek mekanikal, engineering insurance, asuransi commissioning',
+  alternates: {
+    canonical: `${baseUrl}/asuransi-ear`,
+  },
   openGraph: {
     title: 'Asuransi Erection All Risk (EAR) | Pemasangan Mesin & Instalasi',
     description: 'Asuransi EAR melindungi risiko selama proses pemasangan mesin, instalasi pabrik, dan proyek mekanikal-elektrikal.',
+    url: `${baseUrl}/asuransi-ear`,
     type: 'article',
     locale: 'id_ID',
   },

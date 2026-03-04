@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Jaminan Penawaran (Bid Bond) | Surety Bond Resmi | Dunia Asuransi',
   description: 'Jaminan Penawaran atau Bid Bond menjamin peserta tender tidak mengundurkan diri setelah ditetapkan sebagai pemenang. Proses cepat bersama Dunia Asuransi.',
   keywords: 'jaminan penawaran, bid bond, surety bond, jaminan tender, jaminan lelang, bank garansi, kontraktor, proyek konstruksi',
+  alternates: {
+    canonical: `${baseUrl}/jaminan-penawaran`,
+  },
   openGraph: {
     title: 'Jaminan Penawaran (Bid Bond) | Surety Bond Resmi',
     description: 'Jaminan Penawaran menjamin peserta tender tidak mengundurkan diri setelah ditetapkan sebagai pemenang.',
+    url: `${baseUrl}/jaminan-penawaran`,
     type: 'article',
     locale: 'id_ID',
   },

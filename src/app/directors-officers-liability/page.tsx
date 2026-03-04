@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Directors & Officers (D&O) Liability Insurance | Perlindungan Direksi & Komisaris | Dunia Asuransi',
   description: 'Directors & Officers (D&O) Liability Insurance memberikan perlindungan terhadap tuntutan hukum yang ditujukan kepada direksi dan komisaris atas keputusan manajerial.',
   keywords: 'Directors and Officers Insurance, D&O Insurance, Asuransi Direksi, Asuransi Komisaris, Management Liability, asuransi manajemen, liability direksi',
+  alternates: {
+    canonical: `${baseUrl}/directors-officers-liability`,
+  },
   openGraph: {
     title: 'Directors & Officers (D&O) Liability Insurance | Perlindungan Direksi & Komisaris',
     description: 'Perlindungan terhadap tuntutan hukum kepada direksi dan manajemen perusahaan.',
+    url: `${baseUrl}/directors-officers-liability`,
     type: 'article',
     locale: 'id_ID',
   },

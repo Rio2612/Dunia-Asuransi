@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Marine Insurance | Perlindungan Risiko Pengangkutan & Maritim | Dunia Asuransi',
   description: 'Marine Insurance memberikan perlindungan terhadap risiko pengangkutan laut, kapal, dan aktivitas maritim. Termasuk Marine Cargo, Hull & Machinery, Freight Insurance, dan P&I.',
   keywords: 'Marine Insurance, Asuransi Pengangkutan, Asuransi Kapal, Marine Cargo, Hull and Machinery, Freight Insurance, P&I Insurance, asuransi pelayaran, asuransi maritim',
+  alternates: {
+    canonical: `${baseUrl}/marine-insurance`,
+  },
   openGraph: {
     title: 'Marine Insurance | Perlindungan Risiko Pengangkutan & Maritim',
     description: 'Perlindungan risiko pengangkutan barang, kapal, dan aktivitas maritim.',
+    url: `${baseUrl}/marine-insurance`,
     type: 'article',
     locale: 'id_ID',
   },

@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+
+const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import { Shield, ArrowLeft, Wrench, Phone, MessageCircle, Cog, Users, CheckCircle, Settings } from 'lucide-react'
 
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuransi Erection All Risks (EAR) | Perlindungan Instalasi & Mesin',
     description: 'Perlindungan proyek instalasi mesin dan pekerjaan mekanikal elektrikal dengan Asuransi Erection All Risks (EAR). Konsultasi profesional sekarang.',
+    url: `${baseUrl}/asuransi-erection-all-risks`,
     type: 'article',
     locale: 'id_ID',
   },

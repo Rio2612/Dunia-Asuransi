@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const baseUrl = "https://duniaasuransi.com";
+
 export const metadata: Metadata = {
   title: "Dunia Asuransi - Broker Asuransi Terpercaya | Rio Mardiansyah | Kendaraan, Kebakaran, Kargo, Kecelakaan",
   description: "Dunia Asuransi adalah layanan broker asuransi profesional oleh Rio Mardiansyah. Menyediakan asuransi kendaraan, asuransi kebakaran, asuransi kargo, dan asuransi kecelakaan dengan pelayanan personal dan proses klaim mudah.",
@@ -13,10 +15,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  alternates: {
+    canonical: baseUrl,
+  },
   openGraph: {
     title: "Dunia Asuransi - Broker Asuransi Terpercaya by Rio Mardiansyah",
     description: "Solusi asuransi personal untuk kendaraan, properti, kargo, dan diri Anda. Konsultasi gratis dengan Rio Mardiansyah.",
-    url: "https://duniaasuransi.com",
+    url: baseUrl,
     siteName: "Dunia Asuransi",
     type: "website",
     locale: "id_ID",

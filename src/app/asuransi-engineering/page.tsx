@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Asuransi Engineering | Perlindungan Risiko Proyek & Industri',
   description: 'Asuransi Engineering memberikan perlindungan terhadap risiko proyek konstruksi, pemasangan mesin, dan peralatan industri. Konsultasi kebutuhan proyek Anda bersama Dunia Asuransi.',
   keywords: 'Asuransi Engineering, Asuransi Proyek, Asuransi Konstruksi, Engineering Insurance, Asuransi CAR, Asuransi EAR, Machinery Breakdown, Boiler Insurance',
+  alternates: {
+    canonical: `${baseUrl}/asuransi-engineering`,
+  },
   openGraph: {
     title: 'Asuransi Engineering | Dunia Asuransi',
     description: 'Perlindungan menyeluruh untuk proyek konstruksi, instalasi mesin, dan risiko industri melalui Asuransi Engineering.',
+    url: `${baseUrl}/asuransi-engineering`,
     type: 'article',
     locale: 'id_ID',
   },

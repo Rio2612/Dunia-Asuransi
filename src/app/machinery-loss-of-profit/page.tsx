@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Machinery Loss of Profit (MLOP) | Asuransi Kehilangan Laba Mesin | Dunia Asuransi',
   description: 'Machinery Loss of Profit (MLOP) memberikan perlindungan terhadap kehilangan laba akibat kerusakan mesin yang menyebabkan gangguan operasional produksi.',
   keywords: 'Machinery Loss of Profit, MLOP Insurance, Asuransi Kehilangan Laba Mesin, Advance Loss of Profit, ALOP, consequential loss machinery',
+  alternates: {
+    canonical: `${baseUrl}/machinery-loss-of-profit`,
+  },
   openGraph: {
     title: 'Machinery Loss of Profit (MLOP) | Asuransi Kehilangan Laba Mesin',
     description: 'Perlindungan terhadap kehilangan laba akibat kerusakan mesin industri.',
+    url: `${baseUrl}/machinery-loss-of-profit`,
     type: 'article',
     locale: 'id_ID',
   },

@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Property All Risk | Asuransi Properti & Gedung Komersial | Dunia Asuransi',
   description: 'Property All Risk memberikan perlindungan menyeluruh terhadap risiko kerusakan gedung, kantor, hotel, dan properti komersial lainnya dengan cakupan luas.',
   keywords: 'Property All Risk, Asuransi Properti, Asuransi Gedung, Asuransi Bangunan Komersial, PAR Insurance, asuransi bangunan, asuransi kantor, asuransi hotel',
+  alternates: {
+    canonical: `${baseUrl}/property-all-risk`,
+  },
   openGraph: {
     title: 'Property All Risk | Asuransi Properti & Gedung Komersial',
     description: 'Perlindungan menyeluruh untuk properti komersial dan gedung bernilai tinggi.',
+    url: `${baseUrl}/property-all-risk`,
     type: 'article',
     locale: 'id_ID',
   },

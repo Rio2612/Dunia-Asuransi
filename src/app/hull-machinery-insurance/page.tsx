@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Hull & Machinery Insurance | Asuransi Kapal | Dunia Asuransi',
   description: 'Hull & Machinery Insurance memberikan perlindungan terhadap kerusakan fisik kapal dan mesin akibat kecelakaan laut, tabrakan, atau risiko operasional.',
   keywords: 'hull and machinery insurance, asuransi kapal, asuransi marine, hull insurance, machinery insurance, asuransi perkapalan, marine hull, asuransi kerusakan kapal',
+  alternates: {
+    canonical: `${baseUrl}/hull-machinery-insurance`,
+  },
   openGraph: {
     title: 'Hull & Machinery Insurance | Asuransi Kapal',
     description: 'Hull & Machinery Insurance memberikan perlindungan terhadap kerusakan fisik kapal dan mesin akibat kecelakaan laut, tabrakan, atau risiko operasional.',
+    url: `${baseUrl}/hull-machinery-insurance`,
     type: 'article',
     locale: 'id_ID',
   },

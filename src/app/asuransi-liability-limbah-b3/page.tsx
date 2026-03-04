@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+
+const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import { Shield, ArrowLeft, Leaf, Phone, MessageCircle, AlertTriangle, Users, CheckCircle, Building2, Droplets } from 'lucide-react'
 
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuransi Liability Limbah B3 | Dunia Asuransi',
     description: 'Perlindungan terhadap risiko tuntutan hukum dan biaya pemulihan lingkungan akibat pencemaran limbah B3. Solusi profesional dari Dunia Asuransi.',
+    url: `${baseUrl}/asuransi-liability-limbah-b3`,
     type: 'article',
     locale: 'id_ID',
   },

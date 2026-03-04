@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Freight Insurance | Perlindungan Pendapatan Angkut | Dunia Asuransi',
   description: 'Freight Insurance melindungi potensi kehilangan pendapatan angkut akibat kerusakan atau kecelakaan kapal. Perlindungan penting bagi pemilik kapal dan operator pelayaran.',
   keywords: 'freight insurance, asuransi freight, asuransi pendapatan angkut, asuransi marine, freight risk, pendapatan kapal, asuransi pelayaran',
+  alternates: {
+    canonical: `${baseUrl}/freight-insurance`,
+  },
   openGraph: {
     title: 'Freight Insurance | Perlindungan Pendapatan Angkut',
     description: 'Freight Insurance melindungi potensi kehilangan pendapatan angkut akibat kerusakan atau kecelakaan kapal.',
+    url: `${baseUrl}/freight-insurance`,
     type: 'article',
     locale: 'id_ID',
   },

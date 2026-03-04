@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Jaminan Pelaksanaan (Performance Bond) | Dunia Asuransi',
   description: 'Jaminan Pelaksanaan menjamin kontraktor melaksanakan pekerjaan sesuai kontrak proyek. Konsultasi gratis: 0813-1556-592.',
   keywords: 'jaminan pelaksanaan, performance bond, surety bond, jaminan proyek, jaminan konstruksi, bank garansi, kontraktor',
+  alternates: {
+    canonical: `${baseUrl}/jaminan-pelaksanaan`,
+  },
   openGraph: {
     title: 'Jaminan Pelaksanaan (Performance Bond) | Dunia Asuransi',
     description: 'Jaminan Pelaksanaan menjamin kontraktor melaksanakan pekerjaan sesuai kontrak proyek.',
+    url: `${baseUrl}/jaminan-pelaksanaan`,
     type: 'article',
     locale: 'id_ID',
   },

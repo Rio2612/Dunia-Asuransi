@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Business Interruption Insurance | Asuransi Kehilangan Laba | Dunia Asuransi',
   description: 'Business Interruption Insurance memberikan perlindungan terhadap kehilangan laba dan biaya operasional tetap akibat gangguan usaha karena kerusakan properti.',
   keywords: 'Business Interruption Insurance, Asuransi Gangguan Usaha, Asuransi Kehilangan Laba, Loss of Profit Insurance, BI Insurance, consequential loss',
+  alternates: {
+    canonical: `${baseUrl}/business-interruption`,
+  },
   openGraph: {
     title: 'Business Interruption Insurance | Asuransi Kehilangan Laba',
     description: 'Perlindungan terhadap kehilangan laba akibat gangguan operasional bisnis.',
+    url: `${baseUrl}/business-interruption`,
     type: 'article',
     locale: 'id_ID',
   },

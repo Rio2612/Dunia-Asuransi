@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Jaminan Pemeliharaan (Maintenance Bond) | Dunia Asuransi',
   description: 'Jaminan Pemeliharaan menjamin perbaikan kerusakan selama masa pemeliharaan proyek. Berlaku 3-12 bulan sesuai kontrak. Konsultasi gratis: 0813-1556-592.',
   keywords: 'jaminan pemeliharaan, maintenance bond, surety bond, jaminan proyek, jaminan konstruksi, bank garansi',
+  alternates: {
+    canonical: `${baseUrl}/jaminan-pemeliharaan`,
+  },
   openGraph: {
     title: 'Jaminan Pemeliharaan (Maintenance Bond) | Dunia Asuransi',
     description: 'Jaminan Pemeliharaan menjamin perbaikan kerusakan selama masa pemeliharaan proyek.',
+    url: `${baseUrl}/jaminan-pemeliharaan`,
     type: 'article',
     locale: 'id_ID',
   },

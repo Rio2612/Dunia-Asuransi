@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+
+const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import { Shield, ArrowLeft, Cog, Phone, MessageCircle, Settings, CheckCircle, AlertTriangle, Wrench } from 'lucide-react'
 
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuransi Machinery Breakdown | Perlindungan Mesin Industri',
     description: 'Perlindungan profesional untuk mesin produksi dan peralatan industri dari risiko kerusakan mendadak dan kegagalan mekanis.',
+    url: `${baseUrl}/asuransi-machinery-breakdown`,
     type: 'article',
     locale: 'id_ID',
   },

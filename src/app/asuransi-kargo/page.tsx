@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Asuransi Kargo | Marine Cargo Insurance | Dunia Asuransi',
   description: 'Asuransi Kargo atau Marine Cargo Insurance memberikan perlindungan terhadap risiko kerusakan dan kehilangan barang selama pengangkutan laut, darat, dan udara.',
   keywords: 'Asuransi Kargo, Marine Cargo Insurance, Asuransi Pengangkutan Barang, Cargo Insurance Indonesia, ICC A, ICC B, ICC C, asuransi pengiriman barang',
+  alternates: {
+    canonical: `${baseUrl}/asuransi-kargo`,
+  },
   openGraph: {
     title: 'Asuransi Kargo | Marine Cargo Insurance',
     description: 'Perlindungan risiko pengiriman barang domestik maupun internasional melalui Marine Cargo Insurance.',
+    url: `${baseUrl}/asuransi-kargo`,
     type: 'article',
     locale: 'id_ID',
   },

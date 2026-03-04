@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+
+const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import KalkulatorKargo from '@/components/KalkulatorKargo'
 import { Shield, ArrowLeft, Ship, Phone, MessageCircle } from 'lucide-react'
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuransi Kargo Batam | Marine Cargo Domestik & Ekspor Impor',
     description: 'Asuransi Kargo Batam untuk pengiriman domestik dan ekspor impor. Lindungi barang Anda dengan ICC A, B, atau C.',
+    url: `${baseUrl}/asuransi-kargo-batam`,
     type: 'article',
     locale: 'id_ID',
   },

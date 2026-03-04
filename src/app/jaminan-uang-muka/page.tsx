@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 
+const baseUrl = 'https://duniaasuransi.com';
+
 export const metadata: Metadata = {
   title: 'Jaminan Uang Muka (Advance Payment Bond) | Dunia Asuransi',
   description: 'Jaminan Uang Muka menjamin pengembalian dana uang muka proyek sesuai ketentuan kontrak. Konsultasi gratis: 0813-1556-592.',
   keywords: 'jaminan uang muka, advance payment bond, surety bond, jaminan proyek, uang muka konstruksi, bank garansi',
+  alternates: {
+    canonical: `${baseUrl}/jaminan-uang-muka`,
+  },
   openGraph: {
     title: 'Jaminan Uang Muka (Advance Payment Bond) | Dunia Asuransi',
     description: 'Jaminan Uang Muka menjamin pengembalian dana uang muka proyek sesuai ketentuan kontrak.',
+    url: `${baseUrl}/jaminan-uang-muka`,
     type: 'article',
     locale: 'id_ID',
   },
