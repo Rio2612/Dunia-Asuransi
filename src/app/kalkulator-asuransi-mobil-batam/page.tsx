@@ -116,38 +116,25 @@ export default function KalkulatorAsuransiMobilBatam() {
       motor: [0.55, 0.45, 0.35, 0.25, 0.20]
     }
 
-    // Menentukan index berdasarkan tahun kendaraan
-    const tahunSekarang = new Date().getFullYear()
-    const selisihTahun = tahunSekarang - tahun
-    let indexRate = 4
-    
-    if (selisihTahun <= 1) indexRate = 0
-    else if (selisihTahun <= 3) indexRate = 1
-    else if (selisihTahun <= 5) indexRate = 2
-    else if (selisihTahun <= 10) indexRate = 3
-    else indexRate = 4
+function getIndexByHarga(harga: number): number {
+  if (harga <= 125_000_000) return 0
+  if (harga <= 200_000_000) return 1
+  if (harga <= 400_000_000) return 2
+  if (harga <= 800_000_000) return 3
+  return 4
+}
 
     // Menentukan rate
-    let rate = 0
-    const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
+ const indexRate = getIndexByHarga(harga)
 
-    if (jaminan === 'allrisk') {
-      rate = rateAllRiskZona3[jenisKey][indexRate]
-    } else {
-      rate = rateTLOZona3[jenisKey][indexRate]
-    }
+let rate = 0
+const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
 
-    
-
-    // Hitung premi
-    let premi = (harga * rate) / 100
-
-    // Minimum premi
-    if (jaminan === 'allrisk') {
-      premi = Math.max(premi, 250000)
-    } else {
-      premi = Math.max(premi, 100000)
-    }
+if (jaminan === 'allrisk') {
+  rate = rateAllRiskZona3[jenisKey][indexRate]
+} else {
+  rate = rateTLOZona3[jenisKey][indexRate]
+}
 
     setHasil({
       premi: Math.round(premi),
