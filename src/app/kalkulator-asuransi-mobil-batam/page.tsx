@@ -89,7 +89,7 @@ export default function KalkulatorAsuransiMobilBatam() {
   })
 
   // Batam = Zona 1 Sumatera dan Kepulauan di sekitarnya )
-  const zonaBatam = '3'
+  const zonaBatam = '1'
 
   function hitung(e: React.FormEvent) {
     e.preventDefault()
