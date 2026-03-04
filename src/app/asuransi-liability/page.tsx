@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import BreadcrumbSchema, { breadcrumbConfigs } from '@/components/BreadcrumbSchema'
 
 const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
@@ -93,6 +94,7 @@ const jsonLdArticle = {
 export default function LiabilityPage() {
   return (
     <>
+      <BreadcrumbSchema items={breadcrumbConfigs.asuransiLiability} />
       {/* FAQ Schema */}
       <script
         type="application/ld+json"
