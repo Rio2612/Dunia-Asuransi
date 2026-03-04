@@ -91,50 +91,7 @@ export default function KalkulatorAsuransiMobilBatam() {
   // Batam = Zona 1 Sumatera dan Kepulauan di sekitarnya )
   const zonaBatam = '1'
 
-  function hitung(e: React.FormEvent) {
-    e.preventDefault()
-    
-    const harga = parseFloat(formData.harga)
-    const tahun = parseInt(formData.tahun)
-    const jenisKendaraan = formData.jenis
-    let jaminan = formData.jaminan
-
-    if (!harga || !tahun || !jenisKendaraan || !jaminan) {
-      alert('Mohon lengkapi semua data!')
-      return
-    }
-
- // Rate All Risk Zona 1 (Batam)
-const rateAllRiskZona1 = {
-  mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
-  motor: [3.50, 2.80, 2.20, 1.30, 1.00]
-}
-
-// Rate TLO Zona 1 (Batam)
-const rateTLOZona1 = {
-  mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
-  motor: [0.55, 0.45, 0.35, 0.25, 0.20]
-}
-
-function getIndexByHarga(harga: number): number {
-  if (harga <= 125_000_000) return 0
-  if (harga <= 200_000_000) return 1
-  if (harga <= 400_000_000) return 2
-  if (harga <= 800_000_000) return 3
-  return 4
-}
-
-    // Menentukan rate
- const indexRate = getIndexByHarga(harga)
-
-let rate = 0
-const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
-
-if (jaminan === 'allrisk') {
-  rate = rateAllRiskZona3[jenisKey][indexRate]
-} else {
-  rate = rateTLOZona3[jenisKey][indexRate]
-}
+  
 
     setHasil({
       premi: Math.round(premi),
@@ -149,7 +106,73 @@ if (jaminan === 'allrisk') {
 
   function reset() {
     setFormData({
-      harga: '',
+      function hitung(e: React.FormEvent) {
+  e.preventDefault()
+
+  const harga = parseFloat(formData.harga)
+  const tahun = parseInt(formData.tahun)
+  const jenisKendaraan = formData.jenis
+  const jaminan = formData.jaminan
+
+  if (!harga || !tahun || !jenisKendaraan || !jaminan) {
+    alert('Mohon lengkapi semua data!')
+    return
+  }
+
+  const tahunSekarang = new Date().getFullYear()
+  const usia = tahunSekarang - tahun
+
+  // Validasi usia kendaraan untuk All Risk
+  if (jaminan === 'allrisk' && usia > 10) {
+    alert('Kendaraan di atas 10 tahun tidak dapat jaminan All Risk')
+    return
+  }
+
+  // ==============================
+  // RATE ZONA 1 (BATAM)
+  // ==============================
+
+  const rateAllRiskZona1 = {
+    mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
+    motor: [3.50, 2.80, 2.20, 1.30, 1.00]
+  }
+
+  const rateTLOZona1 = {
+    mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
+    motor: [0.55, 0.45, 0.35, 0.25, 0.20]
+  }
+
+  function getIndexByHarga(h: number): number {
+    if (h <= 125_000_000) return 0
+    if (h <= 200_000_000) return 1
+    if (h <= 400_000_000) return 2
+    if (h <= 800_000_000) return 3
+    return 4
+  }
+
+  const indexRate = getIndexByHarga(harga)
+  const jenisKey = jenisKendaraan === 'mobil' ? 'mobil' : 'motor'
+
+  let rate = 0
+
+  if (jaminan === 'allrisk') {
+    rate = rateAllRiskZona1[jenisKey][indexRate]
+  } else {
+    rate = rateTLOZona1[jenisKey][indexRate]
+  }
+
+  const premi = (harga * rate) / 100
+
+  setHasil({
+    premi: Math.round(premi),
+    harga,
+    tahun,
+    zona: zonaBatam,
+    jenis: jenisKendaraan,
+    jaminan,
+    rate: rate
+  })
+      }harga: '',
       tahun: '',
       jenis: '',
       jaminan: ''
