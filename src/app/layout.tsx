@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 const baseUrl = "https://duniaasuransi.com";
 
 export const metadata: Metadata = {
-  title: "Dunia Asuransi - Broker Asuransi Terpercaya | Rio Mardiansyah | Kendaraan, Kebakaran, Kargo, Kecelakaan",
+  title: "Dunia Asuransi - Solusi Asuransi Terpercaya | Rio Mardiansyah | Kendaraan, Kebakaran, Kargo, Kecelakaan",
   description: "Dunia Asuransi adalah layanan broker asuransi profesional oleh Rio Mardiansyah. Menyediakan asuransi kendaraan, asuransi kebakaran, asuransi kargo, dan asuransi kecelakaan dengan pelayanan personal dan proses klaim mudah.",
   keywords: ["Broker Asuransi", "Agen Asuransi", "Asuransi Indonesia", "Asuransi Kendaraan", "Asuransi Kebakaran", "Asuransi Kargo", "Asuransi Kecelakaan", "Rio Mardiansyah", "Dunia Asuransi", "Klaim Cepat"],
   authors: [{ name: "Rio Mardiansyah" }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   openGraph: {
-    title: "Dunia Asuransi - Broker Asuransi Terpercaya by Rio Mardiansyah",
+    title: "Dunia Asuransi - Solusi Asuransi Terpercaya by Rio Mardiansyah",
     description: "Solusi asuransi personal untuk kendaraan, properti, kargo, dan diri Anda. Konsultasi gratis dengan Rio Mardiansyah.",
     url: baseUrl,
     siteName: "Dunia Asuransi",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dunia Asuransi - Broker Asuransi Terpercaya",
+    title: "Dunia Asuransi - Solusi Asuransi Terpercaya",
     description: "Solusi asuransi personal untuk kendaraan, properti, kargo, dan diri Anda.",
   },
   robots: {
