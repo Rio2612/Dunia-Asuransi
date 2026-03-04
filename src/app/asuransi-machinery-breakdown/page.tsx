@@ -312,23 +312,48 @@ export default function MachineryBreakdownPage() {
             </a>
           </div>
 
+          {/* Pillar Link */}
+          <div className="mt-8 bg-slate-100 rounded-xl p-5 border border-slate-200">
+            <Link href="/asuransi-engineering" className="flex items-center gap-2 text-slate-700 hover:text-orange-600 font-medium transition">
+              <ArrowLeft className="w-5 h-5" />
+              Kembali ke Asuransi Engineering
+            </Link>
+            <p className="text-sm text-slate-500 mt-1">Lihat semua jenis asuransi engineering untuk proyek dan industri</p>
+          </div>
+
+          {/* Engineering Cluster Links */}
+          <div className="mt-8 border-t pt-8">
+            <h3 className="text-lg font-semibold text-blue-800">
+              Jenis Asuransi Engineering Lainnya
+            </h3>
+
+            <ul className="mt-4 space-y-2 text-blue-700">
+              <li>
+                <Link href="/asuransi-car-indonesia" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Asuransi Contractor All Risks (CAR)
+                </Link>
+              </li>
+              <li>
+                <Link href="/asuransi-ear" className="hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                  Asuransi Erection All Risks (EAR)
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Internal Linking */}
-          <div className="mt-12 border-t pt-8">
+          <div className="mt-8 border-t pt-8">
             <h3 className="text-lg font-semibold text-blue-800">
               Layanan Asuransi Lainnya
             </h3>
 
             <ul className="mt-4 space-y-2 text-blue-700">
               <li>
-                <Link href="/asuransi-car-indonesia" className="hover:underline flex items-center gap-2">
+                <Link href="/asuransi-liability" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Contractor All Risks (CAR)
-                </Link>
-              </li>
-              <li>
-                <Link href="/asuransi-erection-all-risks" className="hover:underline flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Erection All Risks (EAR)
+                  Asuransi Liability
                 </Link>
               </li>
               <li>
@@ -338,27 +363,9 @@ export default function MachineryBreakdownPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/asuransi-liability-limbah-b3" className="hover:underline flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Liability Limbah B3
-                </Link>
-              </li>
-              <li>
-                <Link href="/asuransi-kebakaran-batam" className="hover:underline flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Kebakaran
-                </Link>
-              </li>
-              <li>
                 <Link href="/asuransi-kargo-batam" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
                   Asuransi Kargo
-                </Link>
-              </li>
-              <li>
-                <Link href="/asuransi-kendaraan-batam" className="hover:underline flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                  Asuransi Kendaraan
                 </Link>
               </li>
             </ul>
