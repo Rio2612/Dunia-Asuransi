@@ -55,7 +55,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Premi Kompetitif',
-    description: 'Batam Zona 3 = rate lebih rendah dari Jakarta'
+    description: 'Batam Zona 1 = rate lebih tinggi dari Jakarta'
   },
   {
     icon: Clock,
@@ -65,7 +65,7 @@ const benefits = [
   {
     icon: Award,
     title: 'Klaim Mudah',
-    description: 'Pendampingan hingga klaim selesai'
+    description: 'Memiliki Bengkel Rekanan Terpercaya'
   }
 ]
 
@@ -88,7 +88,7 @@ export default function KalkulatorAsuransiMobilBatam() {
     jaminan: ''
   })
 
-  // Batam = Zona 3 (Luar Jawa & Bali)
+  // Batam = Zona 1 Sumatera dan Kepulauan di sekitarnya )
   const zonaBatam = '3'
 
   function hitung(e: React.FormEvent) {
@@ -104,15 +104,15 @@ export default function KalkulatorAsuransiMobilBatam() {
       return
     }
 
-    // Rate All Risk Zona 3 (Batam)
+    // Rate All Risk Zona 1 (Batam)
     const rateAllRiskZona3 = {
-      mobil: [2.53, 2.30, 1.75, 1.20, 1.05],
+      mobil: [3.82, 2.67, 2.18, 1.20, 1.05],
       motor: [3.50, 2.80, 2.20, 1.30, 1.00]
     }
 
     // Rate TLO Zona 3 (Batam)
     const rateTLOZona3 = {
-      mobil: [0.38, 0.42, 0.29, 0.25, 0.20],
+      mobil: [0.47, 0.63, 0.41, 0.25, 0.20],
       motor: [0.55, 0.45, 0.35, 0.25, 0.20]
     }
 
