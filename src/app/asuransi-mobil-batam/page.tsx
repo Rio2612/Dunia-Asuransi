@@ -1,150 +1,170 @@
-import type { Metadata } from "next";
-import KalkulatorBatam from "@/components/KalkulatorBatam";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Asuransi Mobil Batam | All Risk & TLO Terbaik",
-  description:
-    "Asuransi Mobil Batam dengan perlindungan All Risk dan TLO sesuai ketentuan OJK. Simulasi premi cepat dan konsultasi langsung via WhatsApp.",
-};
+import { useState } from "react";
 
 export default function Page() {
+  const [hargaMobil, setHargaMobil] = useState<number>(0);
+  const [tipeAsuransi, setTipeAsuransi] = useState("allrisk");
+  const [jenisKendaraan, setJenisKendaraan] = useState("konvensional");
+  const [hasil, setHasil] = useState<number | null>(null);
+
+  const hitungPremi = () => {
+    if (!hargaMobil) return;
+
+    // RATE ZONA 1 (BATAM)
+    const rateAllRiskBawah = 2.47;
+    const rateAllRiskAtas = 2.72;
+    const rateTLOBawah = 0.44;
+    const rateTLOAtas = 0.48;
+
+    let rate = 0;
+
+    if (tipeAsuransi === "allrisk") {
+      rate =
+        jenisKendaraan === "listrik"
+          ? rateAllRiskAtas
+          : rateAllRiskBawah;
+    }
+
+    if (tipeAsuransi === "tlo") {
+      rate =
+        jenisKendaraan === "listrik"
+          ? rateTLOAtas
+          : rateTLOBawah;
+    }
+
+    const premi = (hargaMobil * rate) / 100;
+    setHasil(premi);
+  };
+
+  const risikoSendiri =
+    jenisKendaraan === "listrik" ? 500000 : 300000;
+
   return (
     <main className="bg-white text-slate-800">
 
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Asuransi Mobil Batam
-          </h1>
-          <p className="text-lg md:text-xl mb-8 text-slate-200">
-            Perlindungan All Risk & TLO untuk kendaraan pribadi dan perusahaan 
-            di wilayah Batam dan Kepulauan Riau.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://wa.me/628131556592"
-              target="_blank"
-              className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-semibold transition"
-            >
-              Konsultasi Gratis
-            </a>
-
-            <button
-              onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-              className="bg-white text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
-            >
-              Lihat Detail
-            </button>
-          </div>
-        </div>
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-6 text-center">
+        <h1 className="text-4xl font-bold mb-6">
+          Asuransi Mobil Batam
+        </h1>
+        <p className="text-lg text-slate-200 max-w-2xl mx-auto">
+          Perlindungan All Risk dan TLO untuk mobil konvensional
+          maupun mobil listrik di wilayah Batam dan Kepulauan Riau.
+        </p>
       </section>
 
-      {/* PENJELASAN */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">
-          Pilihan Perlindungan
+      {/* KALKULATOR */}
+      <section className="max-w-2xl mx-auto px-6 py-16">
+
+        <h2 className="text-2xl font-bold mb-8 text-center">
+          Simulasi Premi Asuransi Mobil
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-6">
 
-          {/* ALL RISK */}
-          <div className="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-            <h3 className="text-xl font-semibold mb-3">
-              All Risk (Comprehensive)
-            </h3>
-            <p>
-              Menjamin kerusakan ringan hingga berat, termasuk lecet,
-              tabrakan, hingga kehilangan total. Cocok untuk kendaraan
-              usia 0–8 tahun.
-            </p>
+          {/* Harga Mobil */}
+          <div>
+            <label className="block mb-2 font-semibold">
+              Harga Mobil (Rp)
+            </label>
+            <input
+              type="number"
+              value={hargaMobil}
+              onChange={(e) =>
+                setHargaMobil(Number(e.target.value))
+              }
+              className="w-full border p-3 rounded-lg"
+              placeholder="Contoh: 300000000"
+            />
           </div>
 
-          {/* TLO */}
-          <div className="border rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-            <h3 className="text-xl font-semibold mb-3">
-              Total Loss Only (TLO)
-            </h3>
-            <p>
-              Menjamin kehilangan atau kerusakan di atas 75% dari nilai
-              kendaraan. Pilihan tepat untuk premi lebih ekonomis atau
-              kendaraan usia di atas 8 tahun.
-            </p>
+          {/* Jenis Kendaraan */}
+          <div>
+            <label className="block mb-2 font-semibold">
+              Jenis Kendaraan
+            </label>
+            <select
+              value={jenisKendaraan}
+              onChange={(e) =>
+                setJenisKendaraan(e.target.value)
+              }
+              className="w-full border p-3 rounded-lg"
+            >
+              <option value="konvensional">
+                Mobil Konvensional
+              </option>
+              <option value="listrik">
+                Mobil Listrik
+              </option>
+            </select>
           </div>
+
+          {/* Tipe Asuransi */}
+          <div>
+            <label className="block mb-2 font-semibold">
+              Tipe Asuransi
+            </label>
+            <select
+              value={tipeAsuransi}
+              onChange={(e) =>
+                setTipeAsuransi(e.target.value)
+              }
+              className="w-full border p-3 rounded-lg"
+            >
+              <option value="allrisk">
+                All Risk (Comprehensive)
+              </option>
+              <option value="tlo">
+                Total Loss Only (TLO)
+              </option>
+            </select>
+          </div>
+
+          {/* Button */}
+          <button
+            onClick={hitungPremi}
+            className="w-full bg-slate-900 text-white py-3 rounded-lg hover:bg-slate-700 transition"
+          >
+            Hitung Premi
+          </button>
 
         </div>
-      </section>
 
-      {/* KEUNGGULAN */}
-      <section className="bg-slate-50 py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Mengapa Pilih Kami?
-          </h2>
-
-          <div className="grid md:grid-cols-4 gap-6 text-center">
-
-            <div>
-              <div className="text-3xl mb-2">⚡</div>
-              <p className="font-semibold">Respon Cepat</p>
-            </div>
-
-            <div>
-              <div className="text-3xl mb-2">🤝</div>
-              <p className="font-semibold">Dibantu Rekanan Batam</p>
-            </div>
-
-            <div>
-              <div className="text-3xl mb-2">📄</div>
-              <p className="font-semibold">Simulasi Transparan</p>
-            </div>
-
-            <div>
-              <div className="text-3xl mb-2">🛠</div>
-              <p className="font-semibold">Pendampingan Klaim</p>
-            </div>
-
+        {/* HASIL */}
+        {hasil !== null && (
+          <div className="mt-10 p-6 border rounded-2xl bg-slate-50 text-center">
+            <h3 className="text-xl font-semibold mb-4">
+              Estimasi Premi Tahunan
+            </h3>
+            <p className="text-2xl font-bold mb-2">
+              Rp {hasil.toLocaleString("id-ID")}
+            </p>
+            <p>
+              Risiko Sendiri: Rp{" "}
+              {risikoSendiri.toLocaleString("id-ID")}
+            </p>
           </div>
-        </div>
+        )}
       </section>
 
-      {/* EDUKASI SEO SECTION */}
-      <section className="max-w-4xl mx-auto px-6 py-16 leading-8">
+      {/* EDUKASI */}
+      <section className="max-w-3xl mx-auto px-6 pb-20 leading-8">
         <h2 className="text-2xl font-bold mb-4">
-          Asuransi Mobil di Batam Sesuai Ketentuan OJK
+          Asuransi Mobil Listrik di Batam
         </h2>
         <p className="mb-4">
-          Perhitungan premi asuransi mobil di Batam mengikuti kategori
-          wilayah Zona 1. Besaran premi ditentukan berdasarkan nilai
-          kendaraan, usia kendaraan, serta jenis pertanggungan yang dipilih.
+          Untuk kendaraan listrik, perhitungan premi menggunakan
+          batas atas tarif sesuai ketentuan OJK. Risiko sendiri
+          ditetapkan sebesar Rp 500.000 per kejadian.
         </p>
 
-        <p className="mb-4">
-          Untuk memahami perlindungan kendaraan secara umum,
-          Anda dapat membaca panduan lengkap kami tentang{" "}
-          <Link
-            href="/motor-vehicle-insurance"
-            className="text-emerald-600 underline"
-          >
-            Asuransi Kendaraan Bermotor
-          </Link>.
+        <p>
+          Premi asuransi mobil di Batam mengikuti kategori
+          wilayah Zona 1 dan ditentukan berdasarkan nilai kendaraan
+          serta jenis pertanggungan yang dipilih.
         </p>
-
-        <div className="mt-8 text-center">
-          <a
-            href="https://wa.me/628131556592"
-            target="_blank"
-            className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition"
-          >
-            Konsultasi Sekarang
-          </a>
-        </div>
       </section>
-
-      {/* POPUP KALKULATOR */}
-      <KalkulatorBatam />
 
     </main>
   );
