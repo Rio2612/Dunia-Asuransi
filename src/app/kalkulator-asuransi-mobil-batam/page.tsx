@@ -180,6 +180,27 @@ function reset() {
   })
   setHasil(null)
 }
+  function kirimWA() {
+  if (!hasil) return
+
+  const nomorWA = "628xxxxxxxxxx" // GANTI dengan nomor kamu (format 62 tanpa +)
+
+  const pesan = `
+Halo, saya ingin konsultasi Asuransi Mobil Batam
+
+Harga Kendaraan : Rp ${formatCurrency(hasil.harga)}
+Tahun           : ${hasil.tahun}
+Jenis           : ${hasil.jenis}
+Jaminan         : ${hasil.jaminan.toUpperCase()}
+Rate            : ${hasil.rate}%
+Estimasi Premi  : Rp ${formatCurrency(hasil.premi)}
+
+Mohon penjelasannya 🙏
+`
+
+  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`
+  window.open(url, "_blank")
+  }
   return (
     <>
       {/* JSON-LD Schemas */}
