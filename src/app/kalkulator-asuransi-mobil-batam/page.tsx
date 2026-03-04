@@ -92,6 +92,15 @@ export default function KalkulatorAsuransiMobilBatam() {
 
 // Batam = Zona 1
 const zonaBatam = '1'
+  function formatCurrency(value: string | number) {
+  const number = typeof value === 'string'
+    ? parseFloat(value)
+    : value
+
+  if (!number) return ''
+
+  return new Intl.NumberFormat('id-ID').format(number)
+  }
 
 // ==============================
 // FUNCTION HITUNG PREMI
