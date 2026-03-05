@@ -55,7 +55,7 @@ const faqData = [
   },
   {
     question: 'Bagaimana cara mengajukan klaim Asuransi Liability?',
-    answer: 'Proses klaim Asuransi Liability meliputi: 1) Segera hubungi broker asuransi saat menerima tuntutan atau kejadian yang berpotensi klaim, 2) Dokumentasikan semua informasi terkait kejadian, 3) Jangan mengakui kesalahan atau menegosiasikan dengan pihak ketiga tanpa persetujuan asuransi, 4) Serahkan proses pembelaan hukum kepada tim legal yang ditunjuk asuransi.'
+    answer: 'Proses klaim Asuransi Liability meliputi: 1) Segera hubungi Agen asuransi saat menerima tuntutan atau kejadian yang berpotensi klaim, 2) Dokumentasikan semua informasi terkait kejadian, 3) Jangan mengakui kesalahan atau menegosiasikan dengan pihak ketiga tanpa persetujuan asuransi, 4) Serahkan proses pembelaan hukum kepada tim legal yang ditunjuk asuransi.'
   }
 ];
 
