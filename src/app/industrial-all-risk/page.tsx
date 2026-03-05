@@ -406,7 +406,7 @@ export default function IndustrialAllRiskPage() {
                   WhatsApp: 0813-1556-592
                 </a>
                 <p className="text-xs text-teal-200 text-center">
-                  Rio Mardiansyah - Insurance Broker
+                  Rio Mardiansyah
                 </p>
               </div>
 
