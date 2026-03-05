@@ -37,7 +37,7 @@ const faqData = [
   },
   {
     question: 'Bagaimana cara memilih Marine Insurance yang tepat?',
-    answer: 'Pemilihan Marine Insurance yang tepat bergantung pada kebutuhan spesifik: untuk pemilik barang pilih Marine Cargo Insurance, untuk pemilik kapal kombinasikan Hull & Machinery dengan P&I, untuk operator pelayaran pertimbangkan Freight Insurance. Konsultasi dengan broker asuransi akan membantu menentukan polis yang sesuai dengan profil risiko bisnis Anda.'
+    answer: 'Pemilihan Marine Insurance yang tepat bergantung pada kebutuhan spesifik: untuk pemilik barang pilih Marine Cargo Insurance, untuk pemilik kapal kombinasikan Hull & Machinery dengan P&I, untuk operator pelayaran pertimbangkan Freight Insurance. Konsultasi dengan Konsultan asuransi akan membantu menentukan polis yang sesuai dengan profil risiko bisnis Anda.'
   }
 ];
 
@@ -396,7 +396,7 @@ export default function MarineInsurancePage() {
                   WhatsApp: 0813-1556-592
                 </a>
                 <p className="text-xs text-blue-200 text-center">
-                  Rio Mardiansyah - Insurance Broker
+                  Rio Mardiansyah
                 </p>
               </div>
 
