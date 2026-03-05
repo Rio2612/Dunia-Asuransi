@@ -3,13 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import StructuredData from "@/components/StructuredData";
-verification: {
-  google: "a9q7L9edlnL-mmhZCaVZgGzzqURsbUh-HcBHMsCXOmA",
-},
 const inter = Inter({ subsets: ["latin"] });
-
 const baseUrl = "https://duniaasuransi.com";
-
 export const metadata: Metadata = {
   title: "Dunia Asuransi - Solusi Asuransi Terpercaya | Rio Mardiansyah | Kendaraan, Kebakaran, Kargo, Kecelakaan",
   description: "Dunia Asuransi adalah layanan broker asuransi profesional oleh Rio Mardiansyah. Menyediakan asuransi kendaraan, asuransi kebakaran, asuransi kargo, dan asuransi kecelakaan dengan pelayanan personal dan proses klaim mudah.",
@@ -49,7 +44,9 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-
+verification: {
+  google: "a9q7L9edlnL-mmhZCaVZgGzzqURsbUh-HcBHMsCXOmA",
+},
 export default function RootLayout({
   children,
 }: Readonly<{
