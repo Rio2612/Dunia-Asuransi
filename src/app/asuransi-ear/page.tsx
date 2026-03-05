@@ -365,7 +365,7 @@ export default function EARPage() {
                   WhatsApp: 0813-1556-592
                 </a>
                 <p className="text-xs text-teal-200 text-center">
-                  Rio Mardiansyah - Insurance Broker
+                  Rio Mardiansyah - Insurance Konsultan
                 </p>
               </div>
 
