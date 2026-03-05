@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import StructuredData from "@/components/StructuredData";
-
+verification: {
+  google: "a9q7L9edlnL-mmhZCaVZgGzzqURsbUh-HcBHMsCXOmA",
+},
 const inter = Inter({ subsets: ["latin"] });
 
 const baseUrl = "https://duniaasuransi.com";
