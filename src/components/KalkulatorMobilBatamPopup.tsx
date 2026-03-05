@@ -179,7 +179,7 @@ Mohon penjelasannya 🙏
               </div>
               <div>
                 <h2 className="text-lg font-bold">Kalkulator Premi Mobil Batam</h2>
-                <p className="text-blue-100 text-sm">Estimasi premi untuk zona Batam (Zona 3)</p>
+                <p className="text-blue-100 text-sm">Estimasi premi untuk zona Batam (Zona 1)</p>
               </div>
             </div>
             <button 
