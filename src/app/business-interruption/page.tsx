@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: 'Bagaimana cara menghitung nilai pertanggungan Business Interruption?',
-    answer: 'Nilai pertanggungan dihitung berdasarkan proyeksi pendapatan dan biaya selama periode indemnity (biasanya 12 bulan). Faktor yang dipertimbangkan meliputi laba kotor tahun sebelumnya, tren pertumbuhan usaha, biaya tetap yang tetap berjalan, dan periode pemulihan yang diperlukan. Konsultasi dengan broker asuransi dan akuntan sangat dianjurkan.'
+    answer: 'Nilai pertanggungan dihitung berdasarkan proyeksi pendapatan dan biaya selama periode indemnity (biasanya 12 bulan). Faktor yang dipertimbangkan meliputi laba kotor tahun sebelumnya, tren pertumbuhan usaha, biaya tetap yang tetap berjalan, dan periode pemulihan yang diperlukan. Konsultasi dengan konsultan asuransi dan akuntan sangat dianjurkan.'
   },
   {
     question: 'Berapa lama periode indemnity yang ideal?',
@@ -373,7 +373,7 @@ export default function BusinessInterruptionPage() {
                   WhatsApp: 0813-1556-592
                 </a>
                 <p className="text-xs text-amber-200 text-center">
-                  Rio Mardiansyah - Insurance Broker
+                  Rio Mardiansyah
                 </p>
               </div>
 
