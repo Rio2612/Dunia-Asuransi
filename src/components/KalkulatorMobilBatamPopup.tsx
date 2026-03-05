@@ -230,7 +230,7 @@ Mohon penjelasannya 🙏
               {/* Harga Pertanggungan */}
               <div className="space-y-2">
                 <Label className="text-sm font-medium flex items-center gap-2">
-                  <DollarSign className="w-4 h-4" />
+                  <RupiahSign className="w-4 h-4" />
                   Harga Pertanggungan (Rp)
                 </Label>
                 <Input
