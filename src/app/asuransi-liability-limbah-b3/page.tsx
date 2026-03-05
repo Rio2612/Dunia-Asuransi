@@ -455,7 +455,7 @@ export default function LimbahB3Page() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
         <div className="container mx-auto px-4 text-center text-sm">
-          <p>© {new Date().getFullYear()} Dunia Asuransi - Rio Mardiansyah. Broker Asuransi Profesional.</p>
+          <p>© {new Date().getFullYear()} Dunia Asuransi - Rio Mardiansyah.</p>
           <p className="mt-2">WhatsApp: 0813-1556-592</p>
         </div>
       </footer>
