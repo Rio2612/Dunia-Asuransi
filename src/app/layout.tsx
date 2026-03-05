@@ -3,19 +3,25 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import StructuredData from "@/components/StructuredData";
+
 const inter = Inter({ subsets: ["latin"] });
-const baseUrl = "https://duniaasuransi.com";
+
+const baseUrl = "https://www.duniaasuransi.com";
+
 export const metadata: Metadata = {
   title: "Dunia Asuransi - Solusi Asuransi Terpercaya | Rio Mardiansyah | Kendaraan, Kebakaran, Kargo, Kecelakaan",
   description: "Dunia Asuransi adalah layanan broker asuransi profesional oleh Rio Mardiansyah. Menyediakan asuransi kendaraan, asuransi kebakaran, asuransi kargo, dan asuransi kecelakaan dengan pelayanan personal dan proses klaim mudah.",
   keywords: ["Broker Asuransi", "Agen Asuransi", "Asuransi Indonesia", "Asuransi Kendaraan", "Asuransi Kebakaran", "Asuransi Kargo", "Asuransi Kecelakaan", "Rio Mardiansyah", "Dunia Asuransi", "Klaim Cepat"],
   authors: [{ name: "Rio Mardiansyah" }],
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/logo.svg",
+    apple: "/logo.svg",
   },
   alternates: {
     canonical: baseUrl,
+  },
+  verification: {
+    google: "a9q7L9edlnL-mmhZCaVZgGzzqURsbUh-HcBHMsCXOmA",
   },
   openGraph: {
     title: "Dunia Asuransi - Solusi Asuransi Terpercaya by Rio Mardiansyah",
@@ -26,7 +32,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     images: [
       {
-        url: `${baseUrl}/og-image.png`,
+        url: `${baseUrl}/hero-image.png`,
         width: 1200,
         height: 630,
         alt: "Dunia Asuransi - Solusi Asuransi Terpercaya by Rio Mardiansyah",
@@ -37,16 +43,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dunia Asuransi - Solusi Asuransi Terpercaya",
     description: "Solusi asuransi personal untuk kendaraan, properti, kargo, dan diri Anda.",
-    images: [`${baseUrl}/og-image.png`],
+    images: [`${baseUrl}/hero-image.png`],
   },
   robots: {
     index: true,
     follow: true,
   },
 };
-verification: {
-  google: "a9q7L9edlnL-mmhZCaVZgGzzqURsbUh-HcBHMsCXOmA",
-},
+
 export default function RootLayout({
   children,
 }: Readonly<{
