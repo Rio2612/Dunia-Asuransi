@@ -47,7 +47,7 @@ const faqData = [
   },
   {
     question: 'Berapa limit pertanggungan yang direkomendasikan?',
-    answer: 'Limit pertanggungan disesuaikan dengan skala bisnis, potensi risiko, dan persyaratan kontrak. Untuk usaha kecil hingga menengah, limit USD 100.000 - USD 500.000 umumnya cukup. Untuk perusahaan besar atau high-risk industry, limit USD 1.000.000 atau lebih direkomendasikan. Konsultasikan dengan broker asuransi untuk menentukan limit yang optimal.'
+    answer: 'Limit pertanggungan disesuaikan dengan skala bisnis, potensi risiko, dan persyaratan kontrak. Untuk usaha kecil hingga menengah, limit USD 100.000 - USD 500.000 umumnya cukup. Untuk perusahaan besar atau high-risk industry, limit USD 1.000.000 atau lebih direkomendasikan. Konsultasikan dengan Konsultan / Agen asuransi untuk menentukan limit yang optimal.'
   },
   {
     question: 'Apakah Asuransi Liability mencakup biaya pengacara?',
@@ -319,7 +319,7 @@ export default function LiabilityPage() {
                 <p className="text-sm text-slate-600 mt-1">Pertimbangkan potensi maksimal klaim yang mungkin terjadi</p>
               </div>
               <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-400">
-                <p className="font-medium text-slate-800">4. Konsultasi dengan Broker Asuransi</p>
+                <p className="font-medium text-slate-800">4. Konsultasi dengan Konsultan Asuransi</p>
                 <p className="text-sm text-slate-600 mt-1">Dapatkan saran profesional untuk struktur polis yang optimal</p>
               </div>
             </div>
@@ -432,7 +432,7 @@ export default function LiabilityPage() {
         {/* Footer */}
         <footer className="bg-gray-900 text-gray-400 py-8 mt-12">
           <div className="container mx-auto px-4 text-center text-sm">
-            <p>© {new Date().getFullYear()} Dunia Asuransi - Rio Mardiansyah. Broker Asuransi Profesional.</p>
+            <p>© {new Date().getFullYear()} Dunia Asuransi - Rio Mardiansyah.</p>
             <p className="mt-2">WhatsApp: 0813-1556-592</p>
           </div>
         </footer>
