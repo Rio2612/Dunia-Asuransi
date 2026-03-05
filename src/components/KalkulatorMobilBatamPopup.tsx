@@ -274,8 +274,7 @@ Mohon penjelasannya 🙏
                   <span className="font-medium text-green-800">Lokasi: Batam (Zona 3)</span>
                 </div>
                 <p className="text-sm text-green-700">
-                  Batam termasuk Zona 3 (Luar Jawa & Bali) dengan rate premi lebih rendah dibanding Jakarta (Zona 1). 
-                  Artinya, Anda mendapat perlindungan sama dengan harga lebih terjangkau!
+                  Dapatkan Potongan Khusus dengan Menghubungi kami langsung!
                 </p>
               </div>
 
@@ -327,7 +326,7 @@ Mohon penjelasannya 🙏
               {/* Disclaimer */}
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
                 <p className="font-medium mb-1">Catatan:</p>
-                <p>Hasil perhitungan ini adalah estimasi. Premi akhir dapat berbeda berdasarkan survei kondisi kendaraan, riwayat klaim, dan kebijakan perusahaan asuransi.</p>
+                <p>Hasil perhitungan ini adalah estimasi sesuai Regulasi. Premi akhir dapat berbeda berdasarkan survei kondisi kendaraan, riwayat klaim, dan kebijakan perusahaan asuransi.</p>
               </div>
 
               {/* Action Buttons */}
