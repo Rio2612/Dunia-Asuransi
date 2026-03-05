@@ -221,7 +221,7 @@ export default function KargoPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/asuransi-kebakaran-batam" className="hover:underline flex items-center gap-2">
+                <Link href="/asuransi-kebakaran" className="hover:underline flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
                   Asuransi Kebakaran
                 </Link>
