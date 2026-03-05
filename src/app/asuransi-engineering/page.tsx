@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: 'Bagaimana cara memilih polis yang tepat?',
-    answer: 'Pemilihan polis harus disesuaikan dengan nilai proyek, durasi pekerjaan, jenis instalasi, serta kompleksitas teknis. Konsultasikan dengan broker asuransi untuk mendapatkan rekomendasi yang sesuai.'
+    answer: 'Pemilihan polis harus disesuaikan dengan nilai proyek, durasi pekerjaan, jenis instalasi, serta kompleksitas teknis. Konsultasikan dengan agen asuransi untuk mendapatkan rekomendasi yang sesuai.'
   },
   {
     question: 'Apakah Asuransi Engineering wajib untuk proyek?',
@@ -371,7 +371,7 @@ export default function EngineeringPage() {
                   WhatsApp: 0813-1556-592
                 </a>
                 <p className="text-xs text-slate-400 text-center">
-                  Rio Mardiansyah - Insurance Broker
+                  Rio Mardiansyah
                 </p>
               </div>
 
