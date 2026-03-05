@@ -381,7 +381,7 @@ export default function PropertyAllRiskPage() {
                     <h3 className="font-medium text-emerald-800 group-hover:text-emerald-600">Industrial All Risk</h3>
                     <p className="text-sm text-gray-600">Untuk fasilitas manufaktur dan pabrik</p>
                   </a>
-                  <a href="/asuransi-kebakaran" className="block p-4 bg-orange-50 hover:bg-orange-100 rounded-lg transition group border border-orange-200">
+                  <a href="/asuransi-kebakaran-rumah" className="block p-4 bg-orange-50 hover:bg-orange-100 rounded-lg transition group border border-orange-200">
                     <h3 className="font-medium text-orange-800 group-hover:text-orange-600">Asuransi Kebakaran</h3>
                     <p className="text-sm text-gray-600">Perlindungan dasar kebakaran</p>
                   </a>
