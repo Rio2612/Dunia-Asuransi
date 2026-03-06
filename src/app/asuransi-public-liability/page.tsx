@@ -393,12 +393,11 @@ export default function PublicLiabilityPage() {
 
           {/* 
             PERBAIKAN ERROR GOOGLE SEARCH CONSOLE
-            1. Menambahkan properti 'image' pada Article Schema (wajib).
-            2. Menambahkan BreadcrumbList Schema untuk navigasi.
-            3. Format tanggal dibuat lebih spesifik (ISO 8601).
+            1. Mengubah 'Article' menjadi 'Service' agar bisa memuat Rating (AggregateRating).
+            2. Memasukkan data AggregateRating yang sebelumnya error.
           */}
           
-          {/* Breadcrumb Schema */}
+          {/* 1. Breadcrumb Schema */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -428,23 +427,17 @@ export default function PublicLiabilityPage() {
             }}
           />
 
-          {/* Article Schema (FIXED) */}
+          {/* 2. Service Schema (Pengganti Article + Rating Bintang) */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "Asuransi Public Liability",
+                "@type": "Service", // Diubah dari Article ke Service
+                "serviceType": "Asuransi Public Liability",
+                "name": "Asuransi Public Liability",
                 "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
-                "image": [
-                  `${baseUrl}/logo.png` // Properti ini yang sebelumnya hilang penyebab error
-                ],
-                "author": {
-                  "@type": "Person",
-                  "name": "Rio Mardiansyah"
-                },
-                "publisher": {
+                "provider": {
                   "@type": "Organization",
                   "name": "Dunia Asuransi",
                   "logo": {
@@ -452,17 +445,20 @@ export default function PublicLiabilityPage() {
                     "url": `${baseUrl}/logo.png`
                   }
                 },
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": `${baseUrl}/asuransi-public-liability`
+                // PENAMBAHAN RATING BINTANG (Solusi error parent_node)
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "5.0",
+                  "reviewCount": "6",
+                  "bestRating": "5"
                 },
-                "datePublished": "2025-01-01T08:00:00+07:00",
-                "dateModified": "2025-01-01T08:00:00+07:00"
+                "areaServed": "Indonesia",
+                "url": `${baseUrl}/asuransi-public-liability`
               })
             }}
           />
 
-          {/* FAQ Schema */}
+          {/* 3. FAQ Schema */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
