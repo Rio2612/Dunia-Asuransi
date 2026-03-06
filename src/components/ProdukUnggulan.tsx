@@ -58,7 +58,7 @@ const productCategories = [
     borderColor: 'border-red-200',
     href: '/asuransi-motor-vehicle', // INI DIA SOLUSINYA: Link ke halaman Pilar
     products: [
-      { name: 'Asuransi Mobil', href: '/asuransi-mobil' },
+      { name: 'Asuransi Mobil', href: '/asuransi-mobil-batam' },
       { name: 'Asuransi Excavator', href: '/asuransi-excavator' },
       { name: 'Asuransi Bulldozer', href: '/asuransi-bulldozer' },
       { name: 'Asuransi Wheel Loader', href: '/asuransi-wheel-loader' },
