@@ -384,6 +384,8 @@ export default function PublicLiabilityPage() {
 
           {/* Article Schema */}
           {/* Article Schema */}
+<>
+{/* Article Schema */}
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
@@ -414,43 +416,43 @@ export default function PublicLiabilityPage() {
   }}
 />
 
-          {/* FAQ Schema */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Apa itu Asuransi Public Liability?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Asuransi Public Liability adalah perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Siapa yang membutuhkan Asuransi Public Liability?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Perusahaan, pemilik gedung, hotel, mall, rumah sakit, event organizer, dan berbagai jenis usaha yang berinteraksi dengan publik.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Apakah asuransi ini menanggung biaya hukum?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Ya, polis umumnya mencakup biaya pembelaan hukum sesuai dengan ketentuan yang berlaku.",
-                    },
-                  },
-                ],
-              }),
-            }}
-          />
-
+{/* FAQ Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Asuransi Public Liability?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Asuransi Public Liability adalah perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang membutuhkan Asuransi Public Liability?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perusahaan, pemilik gedung, hotel, mall, rumah sakit, event organizer, dan berbagai jenis usaha yang berinteraksi dengan publik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah asuransi ini menanggung biaya hukum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, polis umumnya mencakup biaya pembelaan hukum sesuai dengan ketentuan yang berlaku."
+          }
+        }
+      ]
+    })
+  }}
+/>
+</>
         </article>
       </div>
 
