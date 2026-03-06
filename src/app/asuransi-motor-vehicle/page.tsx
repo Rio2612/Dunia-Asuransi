@@ -183,7 +183,7 @@ export default function MotorVehiclePage() {
               <section className="bg-white rounded-xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Produk Motor Vehicle</h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <a href="/asuransi-mobil" className="block p-4 bg-red-50 hover:bg-red-100 rounded-lg transition group border border-red-200">
+                  <a href="/asuransi-mobil-batam" className="block p-4 bg-red-50 hover:bg-red-100 rounded-lg transition group border border-red-200">
                     <h3 className="font-medium text-red-800 group-hover:text-red-600">Asuransi Mobil</h3>
                     <p className="text-sm text-gray-600">Perlindungan mobil pribadi & dinas</p>
                   </a>
