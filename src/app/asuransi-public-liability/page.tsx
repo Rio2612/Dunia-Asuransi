@@ -383,26 +383,36 @@ export default function PublicLiabilityPage() {
           </p>
 
           {/* Article Schema */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "Asuransi Public Liability",
-                "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
-                "author": {
-                  "@type": "Person",
-                  "name": "Rio Mardiansyah"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Dunia Asuransi"
-                },
-                "inLanguage": "id-ID"
-              }),
-            }}
-          />
+          {/* Article Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Asuransi Public Liability",
+      "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
+      "author": {
+        "@type": "Person",
+        "name": "Rio Mardiansyah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Dunia Asuransi",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://duniaasuransi.com/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://duniaasuransi.com/asuransi-public-liability"
+      },
+      "datePublished": "2025-01-01",
+      "dateModified": "2025-01-01"
+    })
+  }}
+/>
 
           {/* FAQ Schema */}
           <script
