@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
-
-const baseUrl = 'https://duniaasuransi.com';
 import Link from 'next/link'
 import { Shield, ArrowLeft, Scale, Phone, MessageCircle, Users, CheckCircle, Building2, AlertTriangle } from 'lucide-react'
 
+const baseUrl = 'https://duniaasuransi.com';
+
+// Perbaikan 1: Menambahkan OpenGraph Images agar sesuai dengan Schema
 export const metadata: Metadata = {
   title: 'Asuransi Public Liability | Perlindungan Tanggung Jawab Hukum Perusahaan | Dunia Asuransi',
   description: 'Asuransi Public Liability memberikan perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis.',
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
     url: `${baseUrl}/asuransi-public-liability`,
     type: 'article',
     locale: 'id_ID',
+    images: [ // Penambahan penting untuk validasi
+      {
+        url: `${baseUrl}/logo.png`, // Gunakan logo atau gambar andalan
+        width: 800,
+        height: 600,
+        alt: 'Dunia Asuransi - Rio Mardiansyah',
+      },
+    ],
   },
 }
 
@@ -382,77 +391,113 @@ export default function PublicLiabilityPage() {
             lebih akurat, silakan hubungi kami untuk konsultasi.
           </p>
 
-          {/* Article Schema */}
-          {/* Article Schema */}
-<>
-{/* Article Schema */}
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Asuransi Public Liability",
-      "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
-      "author": {
-        "@type": "Person",
-        "name": "Rio Mardiansyah"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Dunia Asuransi",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://duniaasuransi.com/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://duniaasuransi.com/asuransi-public-liability"
-      },
-      "datePublished": "2025-01-01",
-      "dateModified": "2025-01-01"
-    })
-  }}
-/>
+          {/* 
+            PERBAIKAN ERROR GOOGLE SEARCH CONSOLE
+            1. Menambahkan properti 'image' pada Article Schema (wajib).
+            2. Menambahkan BreadcrumbList Schema untuk navigasi.
+            3. Format tanggal dibuat lebih spesifik (ISO 8601).
+          */}
+          
+          {/* Breadcrumb Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": baseUrl
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Asuransi Liability",
+                    "item": `${baseUrl}/asuransi-liability`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Asuransi Public Liability"
+                  }
+                ]
+              })
+            }}
+          />
 
-{/* FAQ Schema */}
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Apa itu Asuransi Public Liability?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Asuransi Public Liability adalah perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Siapa yang membutuhkan Asuransi Public Liability?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Perusahaan, pemilik gedung, hotel, mall, rumah sakit, event organizer, dan berbagai jenis usaha yang berinteraksi dengan publik."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Apakah asuransi ini menanggung biaya hukum?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ya, polis umumnya mencakup biaya pembelaan hukum sesuai dengan ketentuan yang berlaku."
-          }
-        }
-      ]
-    })
-  }}
-/>
-</>
+          {/* Article Schema (FIXED) */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "Asuransi Public Liability",
+                "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
+                "image": [
+                  `${baseUrl}/logo.png` // Properti ini yang sebelumnya hilang penyebab error
+                ],
+                "author": {
+                  "@type": "Person",
+                  "name": "Rio Mardiansyah"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Dunia Asuransi",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": `${baseUrl}/logo.png`
+                  }
+                },
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": `${baseUrl}/asuransi-public-liability`
+                },
+                "datePublished": "2025-01-01T08:00:00+07:00",
+                "dateModified": "2025-01-01T08:00:00+07:00"
+              })
+            }}
+          />
+
+          {/* FAQ Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Apa itu Asuransi Public Liability?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Asuransi Public Liability adalah perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Siapa yang membutuhkan Asuransi Public Liability?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Perusahaan, pemilik gedung, hotel, mall, rumah sakit, event organizer, dan berbagai jenis usaha yang berinteraksi dengan publik."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Apakah asuransi ini menanggung biaya hukum?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Ya, polis umumnya mencakup biaya pembelaan hukum sesuai dengan ketentuan yang berlaku."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
         </article>
       </div>
 
