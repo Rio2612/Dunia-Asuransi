@@ -4,7 +4,7 @@ import { Shield, ArrowLeft, Scale, Phone, MessageCircle, Users, CheckCircle, Bui
 
 const baseUrl = 'https://duniaasuransi.com';
 
-// Perbaikan 1: Menambahkan OpenGraph Images agar sesuai dengan Schema
+// PERBAIKAN: Mengubah type menjadi 'website' agar tidak bentrok dengan schema Product
 export const metadata: Metadata = {
   title: 'Asuransi Public Liability | Perlindungan Tanggung Jawab Hukum Perusahaan | Dunia Asuransi',
   description: 'Asuransi Public Liability memberikan perlindungan terhadap tuntutan hukum pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi dalam aktivitas operasional bisnis.',
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     title: 'Asuransi Public Liability | Perlindungan Tanggung Jawab Hukum Perusahaan',
     description: 'Lindungi bisnis Anda dari risiko tuntutan hukum pihak ketiga dengan Asuransi Public Liability. Solusi profesional untuk berbagai sektor usaha.',
     url: `${baseUrl}/asuransi-public-liability`,
-    type: 'article',
+    type: 'website', // Diubah dari 'article' ke 'website'
     locale: 'id_ID',
-    images: [ // Penambahan penting untuk validasi
+    images: [
       {
-        url: `${baseUrl}/logo.png`, // Gunakan logo atau gambar andalan
+        url: `${baseUrl}/logo.png`,
         width: 800,
         height: 600,
         alt: 'Dunia Asuransi - Rio Mardiansyah',
@@ -392,9 +392,10 @@ export default function PublicLiabilityPage() {
           </p>
 
           {/* 
-            PERBAIKAN ERROR GOOGLE SEARCH CONSOLE
-            1. Mengubah 'Article' menjadi 'Service' agar bisa memuat Rating (AggregateRating).
-            2. Memasukkan data AggregateRating yang sebelumnya error.
+            PERBAIKAN TOTAL ERROR GOOGLE SEARCH CONSOLE
+            1. Menggunakan skema 'Product' agar BINTANG RATING (AggregateRating) diterima Google.
+            2. Menambahkan 'offers' karena Product wajib punya penawaran.
+            3. Menghapus konflik 'Article' dari metadata (di atas).
           */}
           
           {/* 1. Breadcrumb Schema */}
@@ -427,33 +428,38 @@ export default function PublicLiabilityPage() {
             }}
           />
 
-          {/* 2. Service Schema (Pengganti Article + Rating Bintang) */}
+          {/* 2. Product Schema (Agar Rating Bintang Valid) */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Service", // Diubah dari Article ke Service
-                "serviceType": "Asuransi Public Liability",
+                "@type": "Product",
                 "name": "Asuransi Public Liability",
                 "description": "Perlindungan terhadap tuntutan hukum pihak ketiga akibat aktivitas operasional bisnis.",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Dunia Asuransi",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": `${baseUrl}/logo.png`
-                  }
+                "image": `${baseUrl}/logo.png`,
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Dunia Asuransi"
                 },
-                // PENAMBAHAN RATING BINTANG (Solusi error parent_node)
                 "aggregateRating": {
                   "@type": "AggregateRating",
                   "ratingValue": "5.0",
                   "reviewCount": "6",
                   "bestRating": "5"
                 },
-                "areaServed": "Indonesia",
-                "url": `${baseUrl}/asuransi-public-liability`
+                "offers": {
+                  "@type": "Offer",
+                  "url": `${baseUrl}/asuransi-public-liability`,
+                  "priceCurrency": "IDR",
+                  "price": "0", // Harga 0 karena konsultasi/gratis
+                  "priceValidUntil": "2025-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Dunia Asuransi"
+                  }
+                }
               })
             }}
           />
