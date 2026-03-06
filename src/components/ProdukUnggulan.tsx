@@ -12,7 +12,7 @@ import {
   ArrowRight,
   CheckCircle,
   ExternalLink,
-  Truck // Tambahkan ikon Truck untuk Motor Vehicle
+  Truck
 } from 'lucide-react'
 
 const productCategories = [
@@ -24,6 +24,7 @@ const productCategories = [
     color: 'bg-blue-50',
     iconColor: 'text-blue-600',
     borderColor: 'border-blue-200',
+    href: '/marine-insurance', // Tambahkan link utama kategori (opsional, jika tidak ada akan otomatis ke produk pertama)
     products: [
       { name: 'Marine Cargo Insurance', href: '/asuransi-kargo' },
       { name: 'Hull & Machinery', href: '/hull-machinery-insurance' },
@@ -39,6 +40,7 @@ const productCategories = [
     color: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
     borderColor: 'border-emerald-200',
+    href: '/property-insurance', // Tambahkan link utama kategori
     products: [
       { name: 'Property All Risk', href: '/property-all-risk' },
       { name: 'Industrial All Risk', href: '/industrial-all-risk' },
@@ -51,11 +53,12 @@ const productCategories = [
     title: 'Motor Vehicle Insurance',
     description: 'Perlindungan kendaraan pribadi dan alat berat konstruksi.',
     icon: Truck,
-    color: 'bg-red-50',         // Warna merah muda
-    iconColor: 'text-red-600',  // Warna ikon merah
-    borderColor: 'border-red-200', // Border merah
+    color: 'bg-red-50',
+    iconColor: 'text-red-600',
+    borderColor: 'border-red-200',
+    href: '/asuransi-motor-vehicle', // INI DIA SOLUSINYA: Link ke halaman Pilar
     products: [
-      { name: 'Asuransi Mobil', href: '/asuransi-mobil-batam' },
+      { name: 'Asuransi Mobil', href: '/asuransi-mobil' },
       { name: 'Asuransi Excavator', href: '/asuransi-excavator' },
       { name: 'Asuransi Bulldozer', href: '/asuransi-bulldozer' },
       { name: 'Asuransi Wheel Loader', href: '/asuransi-wheel-loader' },
@@ -70,6 +73,7 @@ const productCategories = [
     color: 'bg-indigo-50',
     iconColor: 'text-indigo-600',
     borderColor: 'border-indigo-200',
+    href: '/engineering-insurance',
     products: [
       { name: 'Construction All Risk', href: '/asuransi-car-indonesia' },
       { name: 'Erection All Risk', href: '/asuransi-ear' },
@@ -85,6 +89,7 @@ const productCategories = [
     color: 'bg-green-50',
     iconColor: 'text-green-600',
     borderColor: 'border-green-200',
+    href: '/liability-insurance',
     products: [
       { name: 'Public Liability', href: '/asuransi-public-liability' },
       { name: 'Product Liability', href: '/asuransi-product-liability' },
@@ -100,6 +105,7 @@ const productCategories = [
     color: 'bg-amber-50',
     iconColor: 'text-amber-600',
     borderColor: 'border-amber-200',
+    href: '/surety-bond',
     products: [
       { name: 'Jaminan Penawaran', href: '/jaminan-penawaran' },
       { name: 'Jaminan Pelaksanaan', href: '/jaminan-pelaksanaan' },
@@ -109,6 +115,7 @@ const productCategories = [
   },
 ]
 
+// ... (Variants tetap sama) ...
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -197,9 +204,9 @@ export default function ProdukUnggulan() {
                       ))}
                     </ul>
 
-                    {/* View All Link */}
+                    {/* View All Link - UPDATED LOGIC */}
                     <a 
-                      href={category.products[0].href}
+                      href={category.href || category.products[0].href} // Menggunakan href kategori jika ada, jika tidak ambil produk pertama
                       className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
                     >
                       Lihat Semua Produk
@@ -234,4 +241,4 @@ export default function ProdukUnggulan() {
         </div>
       </section>
     )
-            }
+}
