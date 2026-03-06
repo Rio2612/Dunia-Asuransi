@@ -11,7 +11,8 @@ import {
   Factory, 
   ArrowRight,
   CheckCircle,
-  ExternalLink
+  ExternalLink,
+  Truck // Tambahkan ikon Truck untuk Motor Vehicle
 } from 'lucide-react'
 
 const productCategories = [
@@ -42,6 +43,23 @@ const productCategories = [
       { name: 'Property All Risk', href: '/property-all-risk' },
       { name: 'Industrial All Risk', href: '/industrial-all-risk' },
       { name: 'Business Interruption', href: '/business-interruption' },
+    ],
+  },
+  // Cluster Baru: Motor Vehicle
+  {
+    id: 'motor-vehicle',
+    title: 'Motor Vehicle Insurance',
+    description: 'Perlindungan kendaraan pribadi dan alat berat konstruksi.',
+    icon: Truck,
+    color: 'bg-red-50',         // Warna merah muda
+    iconColor: 'text-red-600',  // Warna ikon merah
+    borderColor: 'border-red-200', // Border merah
+    products: [
+      { name: 'Asuransi Mobil', href: '/asuransi-mobil' },
+      { name: 'Asuransi Excavator', href: '/asuransi-excavator' },
+      { name: 'Asuransi Bulldozer', href: '/asuransi-bulldozer' },
+      { name: 'Asuransi Wheel Loader', href: '/asuransi-wheel-loader' },
+      { name: 'Asuransi Crane', href: '/asuransi-crane' },
     ],
   },
   {
@@ -216,4 +234,4 @@ export default function ProdukUnggulan() {
         </div>
       </section>
     )
-}
+            }
