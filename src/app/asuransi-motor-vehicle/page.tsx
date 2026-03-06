@@ -195,7 +195,7 @@ export default function MotorVehiclePage() {
                     <h3 className="font-medium text-amber-800 group-hover:text-amber-600">Asuransi Bulldozer</h3>
                     <p className="text-sm text-gray-600">Alat berat dorong tanah</p>
                   </a>
-                  <a href="/asuransi-wheel-loader" className="block p-4 bg-lime-50 hover:bg-lime-100 rounded-lg transition group border border-lime-200">
+                  <a href="#" className="block p-4 bg-lime-50 hover:bg-lime-100 rounded-lg transition group border border-lime-200">
                     <h3 className="font-medium text-lime-800 group-hover:text-lime-600">Asuransi Wheel Loader</h3>
                     <p className="text-sm text-gray-600">Alat muat material</p>
                   </a>
