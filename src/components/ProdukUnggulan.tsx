@@ -55,7 +55,7 @@ const productCategories = [
     iconColor: 'text-red-600',  // Warna ikon merah
     borderColor: 'border-red-200', // Border merah
     products: [
-      { name: 'Asuransi Mobil', href: '/asuransi-mobil' },
+      { name: 'Asuransi Mobil', href: '/asuransi-mobil-batam' },
       { name: 'Asuransi Excavator', href: '/asuransi-excavator' },
       { name: 'Asuransi Bulldozer', href: '/asuransi-bulldozer' },
       { name: 'Asuransi Wheel Loader', href: '/asuransi-wheel-loader' },
