@@ -22,7 +22,7 @@ export default function Hero() {
     <section id="beranda" className="relative min-h-screen flex items-center pt-16 md:pt-20">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/10 z-10" />
         <Image
           src="/hero-image.png"
           alt="Dunia Asuransi - Konsultasi asuransi untuk perlindungan kendaraan, properti, bisnis, dan diri Anda"
