@@ -123,7 +123,7 @@ Rio Mardiansyah
                 <div className="text-xs md:text-sm text-muted-foreground">Klien Puas</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">5+</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">10+</div>
                 <div className="text-xs md:text-sm text-muted-foreground">Tahun Pengalaman</div>
               </div>
               <div className="text-center lg:text-left">
