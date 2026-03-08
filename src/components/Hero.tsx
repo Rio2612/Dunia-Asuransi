@@ -148,7 +148,7 @@ Rio Mardiansyah
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Produk Asuransi Tersedia</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Jenis Asuransi yang Bisa Anda Dapatkan</h3>
                   <p className="text-muted-foreground">
                     Saya menyediakan berbagai pilihan asuransi untuk kebutuhan Anda
                   </p>
