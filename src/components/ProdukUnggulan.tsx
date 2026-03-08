@@ -154,10 +154,11 @@ export default function ProdukUnggulan() {
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Pilihan{' '}
-              <span className="text-primary">Produk Asuransi Terbaik untuk Kendaraan, Properti, dan Bisnis</span>
+              <span className="text-primary">untuk Kendaraan, Properti, dan Bisnis</span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-              Berbagai produk asuransi untuk kebutuhan bisnis dan individu Anda. Klik kategori untuk melihat detail produk.
+              Kami menyediakan berbagai produk asuransi untuk kendaraan, alat berat,
+properti, proyek konstruksi, hingga perlindungan bisnis di seluruh Indonesia.
             </p>
           </motion.div>
 
