@@ -8,7 +8,7 @@ import Image from 'next/image'
 const benefits = [
   'Konsultasi gratis tanpa komitmen',
   'Pelayanan personal langsung dari Rio',
-  'Bantuan proses klaim hingga selesai',
+ 
 ]
 
 const whatsappNumber = '628131556592'
@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/80 z-10" />
         <Image
           src="/hero-image.png"
-          alt="Dunia Asuransi - Konsultan asuransi profesional untuk perlindungan kendaraan, properti, bisnis, dan diri Anda"
+          alt="Dunia Asuransi - Konsultasi asuransi untuk perlindungan kendaraan, properti, bisnis, dan diri Anda"
           fill
           className="object-cover object-center"
           priority
@@ -60,8 +60,12 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-4 md:mb-6"
             >
-              Halo, Saya{' '}
-              <span className="text-primary">Rio Mardiansyah</span>
+           <h1>
+Konsultan Asuransi Profesional di Indonesia
+<span className="block text-primary">
+Rio Mardiansyah
+</span>
+</h1>
             </motion.h1>
 
             <motion.p
