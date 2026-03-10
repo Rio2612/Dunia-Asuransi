@@ -59,6 +59,13 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <body className={`${inter.className} antialiased bg-background text-foreground`}>
+        {/* 
+           PERINGATAN:
+           Pastikan file components/StructuredData.tsx TIDAK mengandung skrip FAQPage.
+           Karena FAQPage sudah diatur di page.tsx.
+           Kalau StructuredData.tsx isinya Organization/WebSite, biarkan saja.
+           Kalau isinya FAQPage, hapus/ubah file tersebut.
+        */}
         <StructuredData />
         {children}
         <Toaster />
