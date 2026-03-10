@@ -28,6 +28,7 @@ const faqData = [
   }
 ]
 
+// Skema FAQ: Menggabungkan semua pertanyaan menjadi SATU objek
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -41,6 +42,7 @@ const faqSchema = {
   }))
 }
 
+// Skema Service
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -100,6 +102,13 @@ const serviceSchema = {
 export default function Home() {
   return (
     <>
+      {/* 
+          PERHATIAN: 
+          Kode di bawah ini sudah benar (hanya merender 1 script FAQ).
+          Jika di Google Search Console masih terdeteksi duplikat,
+          cek file _app.js atau layout.js, hapus script FAQ di sana.
+      */}
+      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
