@@ -59,7 +59,9 @@ const personSchema = {
   "url": baseUrl
 };
 
-// Schema Service di file ini saya HAPUS karena sudah ada di page.tsx
+// CATATAN:
+// Saya menghapus 'serviceSchema' di sini karena sudah ada di page.tsx (dengan detail yang lebih lengkap).
+// Jadi ini menghindari duplikat.
 
 const aggregateRatingSchema = {
   "@context": "https://schema.org",
