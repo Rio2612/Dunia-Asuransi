@@ -59,20 +59,7 @@ const personSchema = {
   "url": baseUrl
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Konsultasi Asuransi Indonesia",
-  "provider": {
-    "@type": "Organization",
-    "name": "Dunia Asuransi",
-    "url": baseUrl
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Indonesia"
-  }
-};
+// Schema Service di file ini saya HAPUS karena sudah ada di page.tsx
 
 const aggregateRatingSchema = {
   "@context": "https://schema.org",
@@ -108,10 +95,6 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"
