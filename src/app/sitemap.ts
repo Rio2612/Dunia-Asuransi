@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const baseUrl = 'https://www.duniaasuransi.com'
+const baseUrl = 'https://duniaasuransi.com'
 
 // Daftar semua halaman statis (Sudah dilengkapi berdasarkan folder repositori)
 const staticPages = [
