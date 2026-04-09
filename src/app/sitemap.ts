@@ -2,22 +2,31 @@ import { MetadataRoute } from 'next'
 
 const baseUrl = 'https://duniaasuransi.com'
 
-// Daftar semua halaman statis
+// Daftar semua halaman statis (Sudah dilengkapi berdasarkan folder repositori)
 const staticPages = [
   '', // homepage
+  '/asuransi-bulldozer',
   '/asuransi-car-indonesia',
+  '/asuransi-crane',
   '/asuransi-ear',
   '/asuransi-engineering',
   '/asuransi-erection-all-risks',
+  '/asuransi-excavator',
   '/asuransi-kargo',
   '/asuransi-kargo-batam',
+  '/asuransi-kebakaran',
+  '/asuransi-kendaraan',
   '/asuransi-liability',
   '/asuransi-liability-limbah-b3',
   '/asuransi-machinery-breakdown',
   '/asuransi-mobil-batam',
+  '/asuransi-motor-grader',
+  '/asuransi-motor-vehicle',
   '/asuransi-product-liability',
   '/asuransi-professional-indemnity',
   '/asuransi-public-liability',
+  '/asuransi-truk',
+  '/asuransi-wheel-loader',
   '/business-interruption',
   '/directors-officers-liability',
   '/freight-insurance',
@@ -44,7 +53,7 @@ function getPriority(path: string): number {
   if (path.includes('engineering')) return 0.8
   if (path.includes('liability')) return 0.8
   if (path.includes('surety') || path.includes('jaminan')) return 0.8
-  return 0.7 // Halaman lainnya
+  return 0.7 // Halaman lainnya (termasuk alat berat & asuransi lainnya)
 }
 
 // Frekuensi update berdasarkan jenis halaman
