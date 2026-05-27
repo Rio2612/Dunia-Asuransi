@@ -89,7 +89,7 @@ const productCategories = [
     color: 'bg-green-50',
     iconColor: 'text-green-600',
     borderColor: 'border-green-200',
-    href: '/liability-insurance',
+    href: '/asuransi-liability',
     products: [
       { name: 'Public Liability', href: '/asuransi-public-liability' },
       { name: 'Product Liability', href: '/asuransi-product-liability' },
