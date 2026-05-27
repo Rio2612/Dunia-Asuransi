@@ -4,7 +4,7 @@ const baseUrl = 'https://duniaasuransi.com';
 
 // ─── META & SEO ────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Asuransi Engineering Indonesia: CAR, EAR & Machinery Breakdown [Panduan 2025]',
+  title: 'Asuransi Engineering Indonesia: CAR, EAR & Machinery Breakdown [Panduan 2026]',
   description:
     'Panduan lengkap Asuransi Engineering di Indonesia: Construction All Risk (CAR), Erection All Risk (EAR), dan Machinery Breakdown. Regulasi OJK, simulasi premi, dan tips klaim dari praktisi berpengalaman.',
   keywords: [
@@ -124,7 +124,7 @@ const jsonLdFaq = {
 const jsonLdArticle = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Asuransi Engineering Indonesia: Panduan Lengkap CAR, EAR & Machinery Breakdown 2025',
+  headline: 'Asuransi Engineering Indonesia: Panduan Lengkap CAR, EAR & Machinery Breakdown 2026',
   description:
     'Panduan lengkap asuransi engineering di Indonesia mencakup CAR, EAR, Machinery Breakdown, regulasi OJK, simulasi premi, dan tips klaim dari praktisi.',
   author: {
@@ -141,7 +141,7 @@ const jsonLdArticle = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': `${baseUrl}/asuransi-engineering` },
   inLanguage: 'id-ID',
   datePublished: '2024-01-01',
-  dateModified: '2025-05-01',
+  dateModified: '2026-05-01',
 };
 
 const jsonLdBreadcrumb = {
