@@ -40,7 +40,7 @@ const productCategories = [
     color: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
     borderColor: 'border-emerald-200',
-    href: '/property-insurance', // Tambahkan link utama kategori
+    href: '/property-all-risk', // Tambahkan link utama kategori
     products: [
       { name: 'Property All Risk', href: '/property-all-risk' },
       { name: 'Industrial All Risk', href: '/industrial-all-risk' },
@@ -73,7 +73,7 @@ const productCategories = [
     color: 'bg-indigo-50',
     iconColor: 'text-indigo-600',
     borderColor: 'border-indigo-200',
-    href: '/engineering-insurance',
+    href: '/asuransi-engineering',
     products: [
       { name: 'Construction All Risk', href: '/asuransi-car-indonesia' },
       { name: 'Erection All Risk', href: '/asuransi-ear' },
