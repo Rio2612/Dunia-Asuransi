@@ -139,7 +139,6 @@ const faqData = [
 
 const jsonLdFaq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqData.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) };
 const jsonLdArticle = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Asuransi Marine Indonesia: Kargo, Hull & Machinery, P&I — Panduan Lengkap 2025', author: { '@type': 'Person', name: 'Rio Mardiansyah', url: baseUrl }, publisher: { '@type': 'Organization', name: 'Dunia Asuransi', url: baseUrl, logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png` } }, mainEntityOfPage: { '@type': 'WebPage', '@id': `${baseUrl}/marine-insurance` }, inLanguage: 'id-ID', datePublished: '2025-01-01', dateModified: '2025-05-01' };
-const jsonLdService = { '@context': 'https://schema.org', '@type': 'Service', '@id': `${baseUrl}/marine-insurance#service`, name: 'Layanan Konsultasi Asuransi Marine', description: 'Konsultasi asuransi marine Indonesia — Marine Cargo, Hull & Machinery, Protection & Indemnity (P&I), dan Freight Insurance.', url: `${baseUrl}/marine-insurance`, provider: { '@type': 'Organization', name: 'Dunia Asuransi', url: baseUrl, telephone: '+628131556592' }, areaServed: { '@type': 'Country', name: 'Indonesia' }, aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6', bestRating: '5', worstRating: '1' } };
 const jsonLdBreadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Beranda', item: baseUrl }, { '@type': 'ListItem', position: 2, name: 'Marine Insurance', item: `${baseUrl}/marine-insurance` }] };
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
@@ -148,7 +147,6 @@ export default function MarineInsurancePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
