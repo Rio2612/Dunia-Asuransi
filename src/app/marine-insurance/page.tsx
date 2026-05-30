@@ -149,7 +149,7 @@ export default function MarineInsurancePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      <div className="bg-gradient-to-b from-blue-50 to-white">
         <div className="bg-blue-950 text-white py-3">
           <div className="max-w-6xl mx-auto px-4">
             <nav className="flex items-center gap-2 text-sm">
@@ -160,16 +160,15 @@ export default function MarineInsurancePage() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-950 via-cyan-950 to-slate-900 text-white py-16 md:py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="max-w-3xl">
+        <div className="bg-gradient-to-r from-blue-950 via-cyan-950 to-slate-900 text-white py-16 md:py-20 px-6">
+          <div className="max-w-5xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="bg-cyan-500/20 text-cyan-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-cyan-500/30">⚓ Asuransi Maritim & Bahari</span>
               <span className="bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-blue-500/30">KUHD Buku II Hukum Laut</span>
               <span className="bg-slate-500/20 text-slate-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-500/30">Diawasi OJK</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">Asuransi Marine Indonesia</h1>
-            <p className="text-lg text-blue-200 leading-relaxed mb-8">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight max-w-3xl">Asuransi Marine Indonesia</h1>
+            <p className="text-lg text-blue-200 leading-relaxed mb-8 max-w-3xl">
               Indonesia adalah negara kepulauan dengan lebih dari 17.000 pulau dan salah satu jalur
               pelayaran tersibuk di dunia melalui Selat Malaka. Ekosistem asuransi marine mencakup
               tiga pilar berbeda — Cargo, Hull & Machinery, dan P&I — yang masing-masing melindungi
@@ -181,7 +180,6 @@ export default function MarineInsurancePage() {
                 Konsultasi Gratis via WA
               </a>
               <a href="tel:+628131556592" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold transition-all">📞 0813-1556-592</a>
-            </div>
             </div>
           </div>
         </div>
@@ -349,13 +347,6 @@ export default function MarineInsurancePage() {
             </div>
           </div>
         </div>
-
-        <footer className="bg-slate-900 text-slate-400 py-8 mt-8">
-          <div className="max-w-6xl mx-auto px-4 text-center text-sm">
-            <p>© {new Date().getFullYear()} Dunia Asuransi — Rio Mardiansyah. Konsultan Asuransi Kerugian Profesional.</p>
-            <p className="mt-1">WhatsApp: 0813-1556-592 | <a href={baseUrl} className="hover:text-white transition">duniaasuransi.com</a></p>
-          </div>
-        </footer>
       </div>
     </>
   );
