@@ -138,7 +138,8 @@ const faqData = [
 ];
 
 const jsonLdFaq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqData.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) };
-const jsonLdArticle = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Asuransi Marine Indonesia: Kargo, Hull & Machinery, P&I — Panduan Lengkap 2025', author: { '@type': 'Person', name: 'Rio Mardiansyah', url: baseUrl }, publisher: { '@type': 'Organization', name: 'Dunia Asuransi', url: baseUrl, telephone: '+628131556592' }, mainEntityOfPage: { '@type': 'WebPage', '@id': `${baseUrl}/marine-insurance` }, inLanguage: 'id-ID', dateModified: '2025-05-01' };
+const jsonLdArticle = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Asuransi Marine Indonesia: Kargo, Hull & Machinery, P&I — Panduan Lengkap 2025', author: { '@type': 'Person', name: 'Rio Mardiansyah', url: baseUrl }, publisher: { '@type': 'Organization', name: 'Dunia Asuransi', url: baseUrl, logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png` } }, mainEntityOfPage: { '@type': 'WebPage', '@id': `${baseUrl}/marine-insurance` }, inLanguage: 'id-ID', datePublished: '2025-01-01', dateModified: '2025-05-01' };
+const jsonLdService = { '@context': 'https://schema.org', '@type': 'Service', '@id': `${baseUrl}/marine-insurance#service`, name: 'Layanan Konsultasi Asuransi Marine', description: 'Konsultasi asuransi marine Indonesia — Marine Cargo, Hull & Machinery, Protection & Indemnity (P&I), dan Freight Insurance.', url: `${baseUrl}/marine-insurance`, provider: { '@type': 'Organization', name: 'Dunia Asuransi', url: baseUrl, telephone: '+628131556592' }, areaServed: { '@type': 'Country', name: 'Indonesia' }, aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6', bestRating: '5', worstRating: '1' } };
 const jsonLdBreadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Beranda', item: baseUrl }, { '@type': 'ListItem', position: 2, name: 'Marine Insurance', item: `${baseUrl}/marine-insurance` }] };
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
@@ -147,6 +148,7 @@ export default function MarineInsurancePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -162,13 +164,14 @@ export default function MarineInsurancePage() {
 
         <div className="bg-gradient-to-r from-blue-950 via-cyan-950 to-slate-900 text-white py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-3xl">
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="bg-cyan-500/20 text-cyan-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-cyan-500/30">⚓ Asuransi Maritim & Bahari</span>
               <span className="bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-blue-500/30">KUHD Buku II Hukum Laut</span>
               <span className="bg-slate-500/20 text-slate-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-500/30">Diawasi OJK</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight max-w-3xl">Asuransi Marine Indonesia</h1>
-            <p className="text-lg text-blue-200 max-w-2xl leading-relaxed mb-8">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">Asuransi Marine Indonesia</h1>
+            <p className="text-lg text-blue-200 leading-relaxed mb-8">
               Indonesia adalah negara kepulauan dengan lebih dari 17.000 pulau dan salah satu jalur
               pelayaran tersibuk di dunia melalui Selat Malaka. Ekosistem asuransi marine mencakup
               tiga pilar berbeda — Cargo, Hull & Machinery, dan P&I — yang masing-masing melindungi
@@ -180,6 +183,7 @@ export default function MarineInsurancePage() {
                 Konsultasi Gratis via WA
               </a>
               <a href="tel:+628131556592" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold transition-all">📞 0813-1556-592</a>
+            </div>
             </div>
           </div>
         </div>
