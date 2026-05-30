@@ -69,27 +69,6 @@ const personSchema = {
   "url": baseUrl
 };
 
-// serviceSchema dan aggregateRatingSchema digabung jadi satu, pindah aggregateRating ke InsuranceAgency
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": `${baseUrl}/#service`,
-  "name": "Layanan Konsultasi Asuransi Indonesia",
-  "description": "Konsultasi asuransi profesional untuk kendaraan, kebakaran, kargo, kecelakaan, dan marine oleh Rio Mardiansyah.",
-  "url": baseUrl,
-  "provider": {
-    "@type": "Organization",
-    "@id": `${baseUrl}/#organization`,
-    "name": "Dunia Asuransi",
-    "url": baseUrl
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Indonesia"
-  },
-  "serviceType": "Insurance Consulting"
-};
-
 export default function StructuredData() {
   return (
     <>
@@ -108,10 +87,6 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
     </>
   );
