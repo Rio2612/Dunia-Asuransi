@@ -3,9 +3,13 @@ const baseUrl = "https://www.duniaasuransi.com";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${baseUrl}/#organization`,
   "name": "Dunia Asuransi",
   "url": baseUrl,
-  "logo": `${baseUrl}/logo.png`,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${baseUrl}/logo.png`
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+628131556592",
@@ -19,6 +23,7 @@ const organizationSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
+  "@id": `${baseUrl}/#localbusiness`,
   "name": "Dunia Asuransi",
   "image": `${baseUrl}/logo.png`,
   "url": baseUrl,
@@ -32,62 +37,57 @@ const localBusinessSchema = {
   "areaServed": {
     "@type": "Country",
     "name": "Indonesia"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${baseUrl}/#website`,
   "name": "Dunia Asuransi",
-  "url": baseUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${baseUrl}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
+  "url": baseUrl
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${baseUrl}/#person`,
   "name": "Rio Mardiansyah",
   "jobTitle": "Insurance Consultant",
   "worksFor": {
     "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
     "name": "Dunia Asuransi"
   },
   "url": baseUrl
 };
 
+// serviceSchema dan aggregateRatingSchema digabung jadi satu, pindah aggregateRating ke InsuranceAgency
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Konsultasi Asuransi Indonesia",
+  "@id": `${baseUrl}/#service`,
+  "name": "Layanan Konsultasi Asuransi Indonesia",
+  "description": "Konsultasi asuransi profesional untuk kendaraan, kebakaran, kargo, kecelakaan, dan marine oleh Rio Mardiansyah.",
+  "url": baseUrl,
   "provider": {
     "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
     "name": "Dunia Asuransi",
     "url": baseUrl
   },
   "areaServed": {
     "@type": "Country",
     "name": "Indonesia"
-  }
-};
-
-const aggregateRatingSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Layanan Konsultasi Dunia Asuransi",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "6"
   },
-  "provider": {
-    "@type": "Organization",
-    "name": "Dunia Asuransi",
-    "url": baseUrl
-  }
+  "serviceType": "Insurance Consulting"
 };
 
 export default function StructuredData() {
@@ -112,10 +112,6 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
     </>
   );
